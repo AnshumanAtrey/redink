@@ -1,0 +1,35 @@
+id: crest-cdpt
+name: CREST Defensible Penetration Test Report
+region: UK / Global
+audience: CREST-accredited testing providers
+status: skeleton
+output_format: docx
+sections:
+  - 01-cover-page
+  - 02-document-control
+  - 03-executive-summary
+  - 04-scope-statement
+  - 05-out-of-scope
+  - 06-testing-methodology
+  - 07-standards-adopted
+  - 08-team-roster
+  - 09-tools-used
+  - 10-risk-rating-methodology
+  - 11-summary-of-findings
+  - 12-key-observations
+  - 13-aggregated-findings-table
+  - 14-per-finding-details
+  - 20-remediation-roadmap
+  - 21-limitations
+  - 22-references
+  - 23-appendices
+  - 26-signoff
+report_title: "CREST Defensible Penetration Test Report"
+official_sources:
+  - https://www.crest-approved.org/wp-content/uploads/2022/12/CREST-Defensible-Penetration-Test-v5-2.pdf
+  - https://www.crest-approved.org/
+finding_id_format: "001"
+hard_rules:
+  - "Three CREST CDPT phases: scoping, delivery, signoff — each must be defensible"
+  - "Statement of totality: confirm all in-scope elements were tested"
+  - "Signoff phase by a tester at certified level or equivalent (QA)"

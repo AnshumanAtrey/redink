@@ -1,0 +1,36 @@
+id: cmmc-level-3
+name: CMMC Level 2/3 Final Assessment Report
+region: USA (DoD)
+audience: DoD contractors assessed by C3PAOs
+status: skeleton
+output_format: docx
+sections:
+  - 01-cover-page
+  - 02-document-control
+  - 03-executive-summary
+  - 04-scope-statement
+  - 06-testing-methodology
+  - 10-risk-rating-methodology
+  - 11-summary-of-findings
+  - 14-per-finding-details
+  - 15-controls-matrix
+  - 17-poam
+  - 18-threat-landscape
+  - 20-remediation-roadmap
+  - 21-limitations
+  - 22-references
+  - 23-appendices
+  - 24-glossary
+  - 25-acronyms
+  - 26-signoff
+report_title: "CMMC Final Assessment Report (FAR)"
+official_sources:
+  - https://dodcio.defense.gov/Portals/0/Documents/CMMC/AssessmentGuideL2.pdf
+  - https://dodcio.defense.gov/Portals/0/Documents/CMMC/AssessmentGuideL3.pdf
+  - https://www.ecfr.gov/current/title-32/subtitle-A/chapter-I/subchapter-G/part-170
+finding_id_format: "F-001"
+hard_rules:
+  - "Controls rated Met / Not Met / Not Applicable per 32 CFR §170.24"
+  - "Final report uploaded to CMMC eMASS; transmitted to SPRS"
+  - "Independent QA reviewer required (not on assessment team)"
+control_status_enum: [Met, Not Met, Not Applicable]

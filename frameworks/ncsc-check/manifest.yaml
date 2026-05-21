@@ -1,0 +1,36 @@
+id: ncsc-check
+name: NCSC CHECK Penetration Test Report
+region: United Kingdom
+audience: CHECK-accredited testing providers (UK government / CNI clients)
+status: skeleton
+output_format: docx
+sections:
+  - 01-cover-page
+  - 02-document-control
+  - 03-executive-summary
+  - 04-scope-statement
+  - 05-out-of-scope
+  - 06-testing-methodology
+  - 07-standards-adopted
+  - 08-team-roster
+  - 09-tools-used
+  - 10-risk-rating-methodology
+  - 11-summary-of-findings
+  - 12-key-observations
+  - 13-aggregated-findings-table
+  - 14-per-finding-details
+  - 20-remediation-roadmap
+  - 21-limitations
+  - 22-references
+  - 23-appendices
+  - 26-signoff
+report_title: "CHECK Penetration Test Report"
+official_sources:
+  - https://www.ncsc.gov.uk/schemes/check/introduction
+  - https://www.ncsc.gov.uk/files/CHECK-Scheme-Standard.pdf
+  - https://www.ncsc.gov.uk/schemes/check/information-for-providers
+finding_id_format: "CHK-001"
+hard_rules:
+  - "Report signed by a CHECK Team Leader holding the appropriate UK CSC Security Testing title"
+  - "Team members must be eligible for SC clearance"
+  - "Provider must follow their accredited quality control process (Technical Lead responsible)"

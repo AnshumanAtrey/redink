@@ -1,0 +1,26 @@
+id: switzerland-ncsc
+name: Switzerland NCSC Cybersecurity Audit Report
+region: Switzerland
+audience: Swiss critical infrastructure operators + auditors
+status: skeleton
+output_format: docx
+sections:
+  - 01-cover-page
+  - 03-executive-summary
+  - 04-scope-statement
+  - 06-testing-methodology
+  - 07-standards-adopted
+  - 11-summary-of-findings
+  - 14-per-finding-details
+  - 21-limitations
+  - 22-references
+  - 27-incident-reporting
+report_title: "NCSC Switzerland Cybersecurity Audit Report"
+official_sources:
+  - https://www.melani.admin.ch/melani/en/home.html
+  - https://www.report.ncsc.admin.ch/en/
+finding_id_format: "CH-001"
+hard_rules:
+  - "24-hour cyberattack reporting mandate for critical infrastructure operators (effective April 2025)"
+  - "References ISO/IEC 27000 series + NIST CSF"
+  - "Critical infrastructure sectors: energy, drinking water, waste disposal, finance, healthcare, ICT, food/drink, transport, traffic, safety/security"

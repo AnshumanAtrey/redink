@@ -1,0 +1,36 @@
+id: passi
+name: ANSSI PASSI Audit Report
+region: France
+audience: PASSI-qualified service providers (Prestataires d'Audit de la Sécurité des SI)
+status: skeleton
+output_format: docx
+sections:
+  - 01-cover-page
+  - 02-document-control
+  - 03-executive-summary
+  - 04-scope-statement
+  - 06-testing-methodology
+  - 07-standards-adopted
+  - 08-team-roster
+  - 11-summary-of-findings
+  - 12-key-observations
+  - 14-per-finding-details
+  - 20-remediation-roadmap
+  - 21-limitations
+  - 22-references
+  - 23-appendices
+  - 24-glossary
+  - 25-acronyms
+  - 26-signoff
+report_title: "Rapport d'audit PASSI"
+official_sources:
+  - https://cyber.gouv.fr/offre-de-service/solutions-certifiees-et-qualifiees/comprendre-levaluation-de-securite/qualification-de-produit-et-services/referentiels-qualification/
+finding_id_format: "001"
+hard_rules:
+  - "Report must contain a 'summary understandable by non-experts' at the top"
+  - "Linear progress of intrusion tests + methodology must be described"
+  - "Vulnerabilities classified by impact AND exploitation difficulty (two-axis)"
+  - "Indicate whether the service was delivered under PASSI qualification"
+languages:
+  - fr (preferred for client delivery)
+  - en (optional)

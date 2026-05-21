@@ -1,0 +1,41 @@
+id: germany-bsi-grundschutz
+name: Germany BSI IT-Grundschutz Audit Report
+region: Germany
+audience: BSI-certified auditors and German federal/regulated entities
+status: skeleton
+output_format: docx
+sections:
+  - 01-cover-page
+  - 02-document-control
+  - 03-executive-summary
+  - 04-scope-statement
+  - 05-out-of-scope
+  - 06-testing-methodology
+  - 07-standards-adopted
+  - 10-risk-rating-methodology
+  - 11-summary-of-findings
+  - 14-per-finding-details
+  - 15-controls-matrix
+  - 18-threat-landscape
+  - 19-compliance-statement
+  - 20-remediation-roadmap
+  - 21-limitations
+  - 22-references
+  - 23-appendices
+  - 24-glossary
+  - 25-acronyms
+  - 26-signoff
+report_title: "BSI IT-Grundschutz Auditbericht"
+official_sources:
+  - https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz_node.html
+  - https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/Zertifikat/ISO27001/Muster_Auditbericht_Kompendium.docx
+finding_id_format: "GS-001"
+hard_rules:
+  - "IT-Grundschutz Compendium contains ~100 modules across 10 layers"
+  - "Each module has Beschreibung (description), Gefährdungslage (threat landscape), Anforderungen (requirements: basic/standard/elevated)"
+  - "BSI Standards 200-1 (ISMS), 200-2 (Methodology), 200-3 (Risk Analysis) referenced"
+  - "Audit certificate issued by BSI; biennial reaudit required for ongoing certification"
+control_status_enum: [Erfüllt, Teilweise erfüllt, Nicht erfüllt, Entbehrlich]
+languages:
+  - de (preferred for BSI submission)
+  - en (international engagements)
