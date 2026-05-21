@@ -1,0 +1,39 @@
+# targets.yaml — engagement scope
+#
+# List every host you tested. /redink-build uses this to:
+#   - populate the location field on each finding
+#   - map poc/web/ folders to a Web target and poc/server/ to a Network target
+#   - sanity-check that PoC screenshots reference IPs/hostnames listed here
+#
+# Edit the example below to match your engagement.
+
+scopes:
+  - name: Network
+    host: "<network-target-hostname>"
+    ip: "<network-target-ip>"
+    services:
+      - "<service-1>"
+      - "<service-2>"
+    notes: |
+      Network scope for this engagement. PoC evidence lives in poc/server/.
+
+  - name: Web
+    host: "<web-target-hostname>"
+    ip: "<web-target-ip>"
+    services:
+      - WebApp
+    notes: |
+      Web scope for this engagement. PoC evidence lives in poc/web/.
+
+# Optional: engagement-wide testing window (mirrors brand-guidelines.md, used
+# for the "Tested on" header).
+testing_window:
+  start: "<DD/MM/YYYY>"
+  end: "<DD/MM/YYYY>"
+  timezone: "<your IANA timezone, e.g. Asia/Kolkata, Europe/London, America/New_York>"
+
+# Optional: VPN / connection info. Not embedded in the report — only used by
+# Claude to validate that PoC screenshots come from the expected source.
+connection:
+  vpn: "<VPN profile name, if applicable>"
+  source_ip: "<your tester IP after VPN connects>"

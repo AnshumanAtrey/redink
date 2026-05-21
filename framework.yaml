@@ -1,0 +1,32 @@
+# framework.yaml — which compliance framework redink should target for this engagement.
+#
+# Pick exactly one. The corresponding folder must exist under frameworks/<name>/.
+# The selected framework's manifest.yaml provides the default section list,
+# which you can override per-engagement in report-recipe.yaml (via /redink-recipe).
+#
+# The universal validators (CWE/CVE/CVSS/EPSS) run the same for every framework;
+# only the report sections + per-finding field shape differ.
+
+framework: certin-annexure-a
+
+# Supported values (status in parentheses):
+#   certin-annexure-a       (✅ implemented — India, CERT-In empaneled auditors)
+#   owasp-optrs             (✅ implemented — global, JSON-native machine-readable)
+#   cmmc-level-3            (🚧 skeleton    — USA, DoD contractors via C3PAOs)
+#   ncsc-check              (🚧 skeleton    — UK, CHECK-accredited testers)
+#   pci-dss-roc             (🚧 skeleton    — global, PCI QSAs / ISAs)
+#   crest-cdpt              (🚧 skeleton    — UK / global, CREST CDPT)
+#   irap                    (🚧 skeleton    — Australia, ASD-registered IRAP assessors)
+#   passi                   (🚧 skeleton    — France, ANSSI PASSI-qualified providers)
+#   russia-fstec            (🚧 skeleton    — Russia, FSTEC / FSB)
+#   japan-nco               (🚧 skeleton    — Japan, NCO / NISC / IPA)
+#   singapore-ccop          (🚧 skeleton    — Singapore, CSA CCoP 2.0)
+#   k-isms-p                (🚧 skeleton    — South Korea, KISA ISMS-P)
+#   switzerland-ncsc        (🚧 skeleton    — Switzerland, NCSC)
+#   israel-incd             (🚧 skeleton    — Israel, INCD ICDM 2.0)
+#   germany-bsi-grundschutz (🚧 skeleton    — Germany, BSI IT-Grundschutz)
+#   uae-nesa                (🚧 skeleton    — UAE, NESA / TDRA)
+#   saudi-nca-ecc           (🚧 skeleton    — Saudi Arabia, NCA Essential Cybersecurity Controls)
+#
+# To list supported frameworks in Claude Code:  /redink-frameworks
+# To pick which sections to include:           /redink-recipe
