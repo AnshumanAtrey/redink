@@ -1,6 +1,6 @@
 # UAE NESA
 
-**Status:** 🚧 Skeleton · **Region:** 🇦🇪 UAE · **Audience:** NESA / TDRA-regulated entities
+**Status:** ✅ Production-ready · **Region:** 🇦🇪 UAE · **Audience:** NESA / TDRA-regulated entities
 
 UAE National Electronic Security Authority / Telecommunications and Digital Government Regulatory Authority. 188 controls split between Management Controls (governance / policy) and Technical Controls (encryption / segmentation / IDS).
 

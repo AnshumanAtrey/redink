@@ -1,9 +1,12 @@
 id: singapore-ccop
-name: Singapore CSA CCoP 2.0 Compliance Audit Report
-region: Singapore
-audience: Critical Information Infrastructure (CII) owners across 11 sectors
-status: skeleton
-output_format: docx
+name: Singapore CCoP 2.0 CII Cybersecurity Audit Report
+region: Singapore — Cyber Security Agency (CSA), under the Cybersecurity Act 2018
+audience: |
+  Auditor approved or appointed in writing by the Commissioner of Cybersecurity
+  (per s.15(1)(a) Cybersecurity Act). CIIO submits Form A1; auditor submits
+  Form A2; both required before audit commences.
+status: production-ready
+output_format: PDF (signed) + supporting evidence package; submitted via CSA portal
 sections:
   - 01-cover-page
   - 02-document-control
@@ -22,14 +25,32 @@ sections:
   - 22-references
   - 23-appendices
   - 26-signoff
-report_title: "CCoP 2.0 Compliance Audit Report"
+report_title: "Cybersecurity Audit Report for Critical Information Infrastructure — issued under s.15(1)(a) Cybersecurity Act 2018 against CCoP for CII (Second Edition, Revision One)"
 official_sources:
+  - https://www.csa.gov.sg/Tips-Resource/Resources/cybersecurity-code-of-practice-for-critical-information-infrastructure-second-edition
   - https://www.csa.gov.sg/legislation/codes-of-practice/
   - https://www.csa.gov.sg/faqs/cybersecurity-audit-cii/
-  - https://isomer-user-content.by.gov.sg/36/2df750a7-a3bc-4d77-a492-d64f0ff4db5a/CCoP---Second-Edition_Revision-One.pdf
-finding_id_format: "CCoP-001"
+  - https://sso.agc.gov.sg/Acts-Supp/9-2018/
+finding_id_format: "CCoP-NNN cross-referenced to CCoP 2.0 clause numbering (clause-domain-subitem) across the 11 requirement sections"
 hard_rules:
-  - "Biennial audit at minimum (Section 15(1)(a) of Cybersecurity Act 2018)"
-  - "Auditor must be approved/appointed by the Commissioner of Cybersecurity"
-  - "Both compliance-based AND risk-based approaches required"
-  - "Covers 11 CII sectors: energy, info-comms, water, healthcare, banking, security/emergency, aviation, land transport, maritime, government, media"
+  - "Audit must use BOTH compliance-based and risk-based approaches — pure checklist audit is non-compliant with CSA guidance"
+  - "Coverage: all ~220 auditable security clauses across 11 domains (Governance, Identification, Protection, Detection, Response & Recovery, Cyber Resilience, Cybersecurity Training & Awareness, OT Security, Cybersecurity Operations, Cyber Threat Intelligence, Incident Management); 7 auditable clauses in CCoP 2.0 (vs 4 in v1.1) carry mandatory audit obligations"
+  - "Audit cycle: at least once every 2 years per s.15(1)(a), or more frequently if directed by the Commissioner"
+  - "Sector-specific overlays apply: financial-services CIIs must also satisfy MAS-TRMG (Technology Risk Management Guidelines); healthcare/energy/transport sectors have additional sector-lead requirements"
+  - "Audit firm and lead auditor must be on the CSA-approved list at the date of audit commencement; auditor cannot have provided consulting in the prior engagement period without disclosed independence safeguards"
+  - "Findings must classify legal/regulatory non-compliance separately from best-practice gaps (binding minimum standards under the Cybersecurity Act vs advisory)"
+severity_classification: |
+  Non-compliance (legally binding clause not met) / Observation (best practice
+  gap) / Recommendation; each rated High / Medium / Low risk.
+control_status_enum: [Non-compliance, Observation, Recommendation, Compliant]
+control_catalogue_reference: |
+  CCoP 2.0 (Second Edition, Revision One) — 11 domains, ~220 clauses; for
+  financial-sector CIIs cross-referenced to MAS-TRMG and MAS Notice 644/655.
+unique_aspects: |
+  CCoP 2.0 explicitly mandates OT security as a first-class domain (rare in
+  national CII codes) and adds a dedicated Cyber Resilience domain emphasising
+  recovery and adversary-emulation testing.
+submission_requirements:
+  - "English language"
+  - "Auditor-signed PDF; submitted by the CIIO (not the auditor directly) to CSA via the regulated CII reporting channel"
+  - "Material non-compliance triggers s.15(3) duty to notify the Commissioner; remediation plan with timelines required"

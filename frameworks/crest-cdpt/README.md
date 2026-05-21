@@ -1,6 +1,6 @@
 # CREST CDPT
 
-**Status:** 🚧 Skeleton · **Region:** 🇬🇧 / 🌍 · **Audience:** CREST-accredited providers
+**Status:** ✅ Production-ready · **Region:** 🇬🇧 / 🌍 · **Audience:** CREST-accredited providers
 
 CREST Defensible Penetration Test — emphasizes commercial defensibility through explicit scoping, delivery, and signoff phases with a statement of totality.
 

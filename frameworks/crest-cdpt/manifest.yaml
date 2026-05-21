@@ -1,9 +1,16 @@
 id: crest-cdpt
-name: CREST Defensible Penetration Test Report
-region: UK / Global
-audience: CREST-accredited testing providers
-status: skeleton
-output_format: docx
+name: CREST Defensible Penetration Test (CDPT) Report
+region: Global — CREST International (UK-headquartered, applied worldwide)
+audience: |
+  Buyers seeking commercially defensible assurance and CREST Accredited Member
+  Companies delivering penetration tests. Scoping, delivery and sign-off must
+  each be carried out by a Suitably Qualified Individual holding a current
+  CREST ID and signed CREST Code of Conduct within the last 12 months.
+  Suitable certifications (CDPT Appendix A): CREST CRT/CCT-INF/CCT-APP,
+  OSCP/OSEP/OSWE, SANS GPEN/GWAPT/GXPN, EC-Council ECSA/LPT — SFIA Level 4
+  minimum.
+status: production-ready
+output_format: pdf (no format prescribed by CREST; pdf is industry default)
 sections:
   - 01-cover-page
   - 02-document-control
@@ -24,12 +31,40 @@ sections:
   - 22-references
   - 23-appendices
   - 26-signoff
-report_title: "CREST Defensible Penetration Test Report"
+report_title: "CREST Defensible Penetration Test Report (per CDPT Specification v5.2, June 2023)"
 official_sources:
+  - https://www.crest-approved.org/crest-defensible-penetration-test/
   - https://www.crest-approved.org/wp-content/uploads/2022/12/CREST-Defensible-Penetration-Test-v5-2.pdf
-  - https://www.crest-approved.org/
-finding_id_format: "001"
+  - https://www.crest-approved.org/wp-content/uploads/2023/04/A-Guide-to-Penetration-Testing-2022.pdf
+  - https://www.crest-approved.org/skills-certifications-careers/
+finding_id_format: "Provider-defined. CDPT §10 recommends Accredited Penetration Testing Providers maintain a numbering system allocating a unique indicator per CDPT engagement, shareable with CREST as part of formal complaints procedure"
 hard_rules:
-  - "Three CREST CDPT phases: scoping, delivery, signoff — each must be defensible"
-  - "Statement of totality: confirm all in-scope elements were tested"
-  - "Signoff phase by a tester at certified level or equivalent (QA)"
+  - "The CREST CDPT symbol should be displayed on the cover page (§10)"
+  - "Report must list the CREST IDs of those undertaking the scoping and the delivery of the CDPT, plus evidence that each person involved in scoping, delivery and sign off was suitably qualified (§10)"
+  - "A statement of totality against the defined scope is required, plus formal sign-off attestation that the CDPT was conducted in accordance with the CREST Defensible Penetration Tester's methodology, and that the assessment was delivered against the agreed scope (§9.1.3)"
+  - "Each vulnerability must be risk-assessed against an agreed methodology; a severity rating using the CVSS Standard should be allocated to each vulnerability to allow comparability of outputs for buyers (§10)"
+  - "Report must include a timeline showing the key activities conducted during the CDPT, with logs available upon request (user accounts modified, binaries executed, access attempts) (§10)"
+  - "Sufficient information should be provided to allow the client to understand and replicate the issue themselves (§10)"
+  - "Contact details for CREST (referencing the Code of Conduct and CREST complaints handling process) must appear in the report (§10)"
+severity_classification: |
+  CVSS-based per §10; "Severity Ratings" defined as a safety metric companies
+  and projects use to measure how critical or serious a risk or position is
+  (§11). CREST is non-prescriptive on band labels (low/medium/high/critical) —
+  provider methodology drives this.
+control_catalogue_reference: |
+  No CDPT-prescribed control catalogue. CDPT defers to provider's CREST-
+  Accredited methodology. For web/mobile, CREST aligns to OWASP ASVS and
+  MASVS via the OWASP Verification Standard (OVS) program — "built to sit as
+  a component of the CREST Defensible Penetration Testing standard" (§3).
+unique_aspects: |
+  CDPT is explicitly guidance, not prescription — CREST chose to focus on a
+  specification defining how a test is "scoped, delivered and signed-off"
+  rather than what to test. The three-phase model (Scoping → Delivery → Sign-Off,
+  each by a separately competent signed-Code-of-Conduct individual) and the
+  formal sign-off attestation are what make a test "commercially defensible".
+submission_requirements:
+  - "Delivery to client by CREST-Accredited Member Company"
+  - "Sign off phase must be undertaken by a suitably skilled or qualified individual, or by a company officer (§9.1.3) — formal attestation"
+  - "Three named CREST IDs in the report (scoping, delivery, sign-off; same or different individuals permitted)"
+  - "No mandated classification scheme; reports handled per client's data-handling agreement and CREST Code of Conduct"
+  - "Provider retains unique engagement reference shareable with CREST during annual accreditation cycle or complaints procedure"

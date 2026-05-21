@@ -1,9 +1,12 @@
 id: irap
-name: IRAP Security Assessment Report + Controls Matrix
-region: Australia
-audience: ASD-registered IRAP assessors
-status: skeleton
-output_format: docx
+name: IRAP Security Assessment Report (SAR) + Security Controls Matrix (SCM)
+region: Australia — Australian Signals Directorate (ASD) / ACSC
+audience: |
+  Endorsed IRAP Assessor (individual, ASD-registered; must hold current
+  endorsement). Assessor — not auditor — terminology is intentional: IRAP
+  individuals "assess" against the ISM, they do not "certify" or "authorise".
+status: production-ready
+output_format: docx (mandatory ASD templates) + signed PDF deliverable
 sections:
   - 01-cover-page
   - 02-document-control
@@ -17,15 +20,38 @@ sections:
   - 22-references
   - 23-appendices
   - 26-signoff
-report_title: "IRAP Security Assessment Report"
+report_title: "Security Assessment Report (SAR) + Security Controls Matrix (SCM) / Cloud Security Controls Matrix (CSCM)"
 official_sources:
   - https://www.cyber.gov.au/business-government/protecting-devices-systems/assessment-evaluation-programs/irap
   - https://www.cyber.gov.au/sites/default/files/2025-04/IRAP%20common%20assessment%20framework.pdf
   - https://www.cyber.gov.au/sites/default/files/2024-08/IRAP%20consumer%20guide.pdf
-finding_id_format: "IRAP-001"
+  - https://www.cyber.gov.au/sites/default/files/2024-09/PROTECTED%20Cloud%20Security%20Assessment%20Report%20Template.docx
+finding_id_format: "IRAP-NNN with cross-reference to ISM control ID (e.g., ISM-0123) in the SCM/CSCM"
 hard_rules:
-  - "Assessors do NOT provide risk ratings — they identify weaknesses; consumer assesses risk"
-  - "Two minimum deliverables: Security Assessment Report (SAR) + Controls Matrix"
-  - "Outputs follow ASD guidance on cyber.gov.au; no marketing/promotional language"
+  - "Risk decision is the CONSUMER's, not the assessor's — the SAR documents control effectiveness and residual risk; only the system owner / authorising officer accepts risk and grants authorisation to operate"
+  - "Use the word 'assessor' throughout; never 'auditor', 'certifier', or 'authoriser' — load-bearing semantic distinction in IRAP doctrine"
+  - "Every finding must map to a specific ISM control reference (current ISM release at assessment cut-off date) plus PSPF where relevant"
+  - "Must follow the ASD IRAP Common Assessment Framework (April 2025) four-stage process: planning, scoping, assessment, reporting"
+  - "Assessor must declare independence and absence of conflicts; SAR must be signed by the endorsed IRAP individual (not just the firm)"
+  - "Protective marking on the SAR (OFFICIAL, OFFICIAL:Sensitive, PROTECTED) must match the system's classification and ISM handling rules"
+severity_classification: |
+  Control effectiveness rating per ISM control (Effective / Ineffective / Not
+  Applicable / Alternate Control), plus residual risk rating using ISO 31000-
+  aligned likelihood × consequence matrix.
+control_status_enum: [Effective, Ineffective, Not Applicable, Alternate Control]
+control_catalogue_reference: |
+  ASD Information Security Manual (ISM) — current quarterly release; PSPF for
+  non-technical controls; ACSC Essential Eight Maturity Model for mitigation
+  strategies.
+unique_aspects: |
+  IRAP is the only major framework that explicitly removes risk-acceptance
+  authority from the assessor and pushes it to the consumer/system owner —
+  the report is consciously structured as input to a self-authorisation
+  decision, not as a pass/fail certificate.
+submission_requirements:
+  - "English language only"
+  - "Delivered as completed ASD docx templates plus signed PDF cover letter"
+  - "SAR + SCM/CSCM provided to assessed entity, who may share with NCCEs (consumers) under their own information-sharing arrangements"
+  - "Assessor uploads final report metadata to ASD's IRAP portal within timeframes set by ASD"
 explicitly_excluded_sections:
   - 10-risk-rating-methodology  # IRAP forbids risk ratings by assessor

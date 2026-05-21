@@ -1,9 +1,12 @@
 id: saudi-nca-ecc
-name: Saudi Arabia NCA Essential Cybersecurity Controls (ECC) Audit Report
-region: Saudi Arabia
-audience: Saudi entities subject to NCA Essential Cybersecurity Controls
-status: skeleton
-output_format: docx
+name: NCA ECC Cybersecurity Audit & Compliance Report
+region: Saudi Arabia — National Cybersecurity Authority (NCA)
+audience: |
+  NCA-licensed Cybersecurity Service Providers (CSPs) registered on the Haseen
+  portal since Aug 2022; mandatory for government entities, their subsidiaries,
+  and private CNI operators; Class A/B/C licensing tiers govern CSP scope.
+status: production-ready
+output_format: docx + signed PDF + Arabic/English bilingual control register (XLSX)
 sections:
   - 01-cover-page
   - 02-document-control
@@ -22,14 +25,44 @@ sections:
   - 22-references
   - 23-appendices
   - 26-signoff
-report_title: "NCA ECC Compliance Audit Report"
+report_title: "Essential Cybersecurity Controls (ECC-1:2018) Compliance Assessment Report"
 official_sources:
-  - https://nca.gov.sa/en/
+  - https://nca.gov.sa/en/legislation/cybersecurity-controls/
   - https://nca.gov.sa/ecc-en.pdf
   - https://cdn.nca.gov.sa/api/public/cms/files/fd4cfde4-6ffe-45d5-ac29-820e4d2e4ef0_Guide-to-Essential-Cybersecurity-Controls-(ECC)-Implementation.pdf
-finding_id_format: "ECC-001"
+  - https://nca.gov.sa/en/regulatory-documents/controls-list/ecc/
+finding_id_format: "ECC-<D>-<S>-<NN> (e.g., ECC-2-3-4 = Domain 2 Cybersecurity Defence / Subdomain 3 / Control 4); cross-frameworks use CCC-/CSCC-/OTCC- prefixes"
 hard_rules:
-  - "5 core domains: Cybersecurity Governance · Cybersecurity Defense · Cybersecurity Operations · Third Party & Cloud Computing Cybersecurity · Cybersecurity Compliance & Audit"
-  - "Findings tagged with framework reference (single finding can be NCA ECC gap + ISO 27001 nonconformity + SAMA CSF gap + PDPL exposure)"
-  - "Consistent rating scale across audit charter (e.g. critical/major/moderate/minor)"
-control_status_enum: [Yes, Partial, No, Not Applicable]
+  - "All 114 controls must be assessed across the 5 main domains and 29 subdomains: (1) Cybersecurity Governance — 5 subdomains / ~24 controls, (2) Cybersecurity Defence — 13 subdomains / ~73 controls, (3) Cybersecurity Resilience — 1 subdomain / 6 controls, (4) Third-Party & Cloud Computing Cybersecurity — 2 subdomains / 6 controls, (5) Industrial Control Systems Cybersecurity — 2 subdomains / 5 controls"
+  - "Cross-framework layering is mandatory where applicable: critical national systems also bind by CSCC-1:2019 (additional controls), OT/ICS environments add OTCC-1:2022 (4 domains / 23 subdomains / 47 main + 122 sub-controls), cloud services add CCC-1:2020 — the report must declare which overlays are in scope"
+  - "Each control receives implementation-level rating (Not Implemented / Partially Implemented / Implemented / Not Applicable) and a 0-4 maturity score (Not Implemented / Initial / Developing / Defined / Optimised)"
+  - "The assessor must compute aggregate compliance percentage at sub-domain, domain, and overall levels; sector benchmarks are published by NCA"
+  - "CSP performing the audit must be NCA-licensed via the Haseen portal (license category must match the service) and CSP licence number must appear on the cover page"
+  - "Arabic is the authoritative submission language; English permitted as supplementary"
+severity_classification: |
+  Two-axis: implementation status (Not Implemented / Partial / Implemented / N/A)
+  crossed with maturity tier (0-4). Findings rated Critical / High / Medium / Low
+  based on the gap to target tier and the domain's criticality (Governance and
+  Defence findings weighted higher). Aggregate scoring produces a compliance
+  percentage and a maturity profile per the 29 subdomains.
+control_status_enum: [Implemented, Partially Implemented, Not Implemented, Not Applicable]
+control_catalogue_reference: |
+  NCA ECC-1:2018 — 114 controls across 5 main domains and 29 subdomains
+  (superseded by ECC-2:2024 / 108 controls / 4 domains as of October 2024, but
+  ECC-1 remains the canonical reference for legacy assessments). Layered with
+  CSCC-1:2019 (Critical Systems), OTCC-1:2022 (OT/ICS), CCC-1:2020 (Cloud).
+unique_aspects: |
+  Saudi NCA operates the most complete national CSP licensing regime in the
+  region via the Haseen portal — every assessor providing audit, penetration
+  testing, or MSOC services must hold an NCA licence, with the licence number
+  printed on the report cover. Cross-framework stacking (ECC + CSCC + OTCC + CCC)
+  is unique to the Kingdom.
+submission_requirements:
+  - "Arabic master + English translation; both signed and stamped; CSP licence number on cover page"
+  - "Submitted via the Haseen portal (https://www.haseen.gov.sa) by the licensed CSP on behalf of the audited entity"
+  - "Government entities must additionally route a copy to their parent ministry's CISO and to NCA's GRC division"
+  - "Findings register in NCA's prescribed XLSX template; XML/JSON export required for NCA's national compliance telemetry"
+  - "Reassessment cadence: annual for government and CNI; biannual for Tier-classified critical systems under CSCC"
+languages:
+  - ar (authoritative)
+  - en (supplementary)

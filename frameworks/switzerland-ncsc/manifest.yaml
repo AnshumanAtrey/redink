@@ -1,9 +1,17 @@
 id: switzerland-ncsc
-name: Switzerland NCSC Cybersecurity Audit Report
-region: Switzerland
-audience: Swiss critical infrastructure operators + auditors
-status: skeleton
-output_format: docx
+name: Cyberangriff-Meldung an das BACS / Cyber Risk Report (FINMA-regulated sectors)
+region: Switzerland — Bundesamt für Cybersicherheit (BACS / NCSC) for critical infrastructure; Eidgenössische Finanzmarktaufsicht (FINMA) for banks/insurers
+audience: |
+  Operators of critical infrastructure under the Informationssicherheitsgesetz
+  (ISG/ISA) amendment of 29 September 2023; FINMA-supervised banks/insurers
+  under Rundschreiben 2023/1 "Operationelle Risiken und Resilienz – Banken";
+  pentesters/auditors engaged by these entities must meet "qualified personnel
+  with appropriate resources" requirement.
+status: production-ready
+output_format: |
+  pdf submitted via NCSC Cyber Security Hub online form or email (initial 24h
+  notification); detailed follow-up within 14 days; FINMA reports follow
+  institution-specific channels.
 sections:
   - 01-cover-page
   - 03-executive-summary
@@ -15,12 +23,47 @@ sections:
   - 21-limitations
   - 22-references
   - 27-incident-reporting
-report_title: "NCSC Switzerland Cybersecurity Audit Report"
+report_title: "Cyberangriff-Meldung (NCSC mandatory reporting form) + Pentest-/Vulnerabilitätsbericht (FINMA-required documented and reported pentest/red-team result)"
 official_sources:
-  - https://www.melani.admin.ch/melani/en/home.html
-  - https://www.report.ncsc.admin.ch/en/
-finding_id_format: "CH-001"
+  - https://www.ncsc.admin.ch/ncsc/en/home/aktuell/im-fokus/2025/meldepflicht-2025.html
+  - https://www.finma.ch/en/documentation/dossier/dossier-cyberrisiken/cyberrisiken-2023-1/
+  - https://www.ncsc.admin.ch/ncsc/en/home.html
+finding_id_format: "NCSC report uses incident reference assigned by Cyber Security Hub on submission. Pentest/red-team findings under FINMA 2023/1 use institution-defined IDs but MUST map to inventoried ICT components and the institution's risk register"
 hard_rules:
-  - "24-hour cyberattack reporting mandate for critical infrastructure operators (effective April 2025)"
-  - "References ISO/IEC 27000 series + NIST CSF"
-  - "Critical infrastructure sectors: energy, drinking water, waste disposal, finance, healthcare, ICT, food/drink, transport, traffic, safety/security"
+  - "24-hour mandatory reporting — operators of critical infrastructure MUST notify BACS/NCSC within 24 hours of discovering an attack that disrupts critical infrastructure, manipulates/leaks information, or involves blackmail/threats/coercion (ISG/ISA amendment in force 1 April 2025)"
+  - "14-day detailed follow-up — full incident report due to NCSC within 14 days of initial notification"
+  - "FINMA 2023/1 §III.J requires regular Schwachstellenanalysen AND Penetrationstests covering ALL inventoried internet-accessible ICT components AND all components handling kritische Daten or critical processes"
+  - "FINMA-supervised institutions MUST conduct risk-based scenario-related cyber exercises (Red Teaming, Phishing, Table-Top) and results MUST be 'in angemessener Form dokumentiert und berichtet'"
+  - "FINMA financial-sector incident reporting: preliminary notification within 24h, detailed report within 72h, plus root-cause analysis (FINMA-RS 2023/1 + revised FINMA-RS 2013/3 'Auditing' in force 1 January 2024)"
+  - "Grace period for NCSC sanctions ended 1 October 2025 — fines up to CHF 100,000 for non-compliance with ISG reporting obligation"
+severity_classification: |
+  NCSC reporting triggered by binary criteria — attack must (a) disrupt critical
+  infrastructure functioning, (b) manipulate/leak information, OR (c) involve
+  blackmail/threats/coercion. FINMA uses a risk-based approach: institutions
+  classify by potential impact on operational resilience and critical data;
+  FINMA-RS 2023/1 mandates institution-specific Bedrohungspotenzial assessment
+  driving exercise frequency/depth.
+control_catalogue_reference: |
+  ISG / Informationssicherheitsgesetz (Information Security Act, 29 Sept 2023) +
+  Cybersicherheitsverordnung (in force 1 April 2025). For financial sector:
+  FINMA-RS 2023/1 "Operationelle Risiken und Resilienz – Banken" §III "ICT-
+  Risikomanagement" and §IV "Cyberrisiken." Pentest scope = ALL inventoried
+  ICT components (internet-accessible + critical-data-handling).
+unique_aspects: |
+  Switzerland uniquely couples a 24-hour NCSC reporting obligation (ISG) with
+  sector-specific 24h/72h FINMA reporting for finance — pentest reports of
+  FINMA-supervised entities are effectively dual-purpose evidence, supporting
+  both the institution's resilience attestation AND, if incident-triggered, the
+  14-day follow-up dossier to NCSC.
+submission_requirements:
+  - "Language: German, French or Italian (Swiss official languages); English accepted for international FINMA-supervised banks"
+  - "NCSC submission: online form via Cyber Security Hub (https://www.report.ncsc.admin.ch) or email per published NCSC procedure"
+  - "Initial NCSC notification within 24h of discovery; detailed follow-up within 14 days"
+  - "FINMA: preliminary cyber-incident report within 24h, detailed report within 72h, post-incident root-cause analysis required"
+  - "Pentest must be by 'qualified personnel with appropriate resources' — FINMA expects evidence of tester competence"
+  - "Sanctions: up to CHF 100,000 for ISG-reporting non-compliance (enforced from 1 October 2025)"
+languages:
+  - de
+  - fr
+  - it
+  - en (international FINMA-supervised banks)

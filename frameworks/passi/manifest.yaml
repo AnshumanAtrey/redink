@@ -1,9 +1,13 @@
 id: passi
-name: ANSSI PASSI Audit Report
-region: France
-audience: PASSI-qualified service providers (Prestataires d'Audit de la Sécurité des SI)
-status: skeleton
-output_format: docx
+name: Rapport d'audit PASSI (ANSSI)
+region: France — Agence nationale de la sécurité des systèmes d'information (ANSSI)
+audience: |
+  PASSI-qualified service providers only (qualification by ANSSI under
+  Référentiel d'exigences v2.2, in force 01/08/2024); two qualification levels —
+  "substantiel" and "élevé" (aligned with EU Cybersecurity Act); transition from
+  v2.0 mandatory.
+status: production-ready
+output_format: pdf (delivered with cryptographic protection; conservation/destruction clause mandatory)
 sections:
   - 01-cover-page
   - 02-document-control
@@ -22,15 +26,43 @@ sections:
   - 24-glossary
   - 25-acronyms
   - 26-signoff
-report_title: "Rapport d'audit PASSI"
+report_title: "Rapport d'audit (Prestataires d'audit de la sécurité des systèmes d'information)"
 official_sources:
+  - https://cyber.gouv.fr/sites/default/files/2014/12/PASSI_referentiel-exigences_v2.1.pdf
   - https://cyber.gouv.fr/offre-de-service/solutions-certifiees-et-qualifiees/comprendre-levaluation-de-securite/qualification-de-produit-et-services/referentiels-qualification/
-finding_id_format: "001"
+  - https://cyber.gouv.fr/actualites/lanssi-met-%C3%A0-jour-les-referentiels-passi-version-22-et-pris-version-30/
+finding_id_format: "Provider-defined per VI.6.4.a; recommended convention is ARCHI-NNN / CONF-NNN / CODE-NNN / INTRUSION-NNN / ORGAPHY-NNN matching the 5 audit activity codes from §II"
 hard_rules:
-  - "Report must contain a 'summary understandable by non-experts' at the top"
-  - "Linear progress of intrusion tests + methodology must be described"
-  - "Vulnerabilities classified by impact AND exploitation difficulty (two-axis)"
-  - "Indicate whether the service was delivered under PASSI qualification"
+  - "Rapport d'audit MUST contain six sections in order: Qualification, Cadre, Synthèse managériale, Résultats, Annexes (plan d'audit + note de cadrage), and Restitution record (§VI.6.1–VI.6.5)"
+  - "Synthèse managériale MUST be 'compréhensible par des personnes non expertes en sécurité des systèmes d'information' and describe 'risques critiques et scénarios de menace associés' plus reservations on scope/sampling/collaboration"
+  - "For each finding the provider MUST supply: audit evidence (preuves d'audit), attacker profile, attack scenarios, exploitation conditions, and whether an exploitation attempt was performed with its result (§VI.6.4.d)"
+  - "For level [ÉLEVÉ]: hot debrief ('restitution à chaud') at end of EACH day; written notice of major non-conformities / critical-risk vulnerabilities before final report (§VI.5.a, §VI.5.c)"
+  - "Provider MUST define BOTH a severity scale (échelle de gravité) AND a remediation priority scale (échelle de priorité) within the report (§VI.6.4.e, §VI.6.4.h)"
+  - "Mandatory restitution / erasure / destruction of all audit data per §VI.7; lifecycle proof must be retained"
+severity_classification: |
+  Two-axis risk model — provider MUST define an échelle de classement de la
+  gravité (severity scale) "en fonction des risques encourus" (function of risks
+  incurred, i.e. impact × likelihood) AND assign each finding a gravité level on
+  that scale (§VI.6.4.e–f). Reference scale uses critique / majeur / mineur;
+  §VI.5 distinguishes "non-conformité majeure" from "risque critique."
+control_status_enum: [Critique, Majeur, Mineur, Observation]
+control_catalogue_reference: |
+  5 PASSI audit activity categories (§II): Audit d'architecture (ARCHI), Audit
+  de configuration (CONF), Audit de code source (CODE), Test d'intrusion
+  (INTRUSION), Audit organisationnel et physique (ORGAPHY). PASSI LPM scope
+  adds OIV (opérateurs d'importance vitale) under Loi de Programmation Militaire.
+unique_aspects: |
+  Only ANSSI-qualified PASSI providers may sign reports valid for LPM / RGS /
+  NIS-2 regulatory contexts in France; the two-level qualification (substantiel
+  / élevé) tracks the EU Cybersecurity Act, and §VI.5.c mandates pre-report
+  written warning of critical-risk findings — an unusual "must-disclose-before-
+  final-report" obligation.
+submission_requirements:
+  - "Language: French (note de cadrage §IV.4.n requires explicit 'langue' specification; PASSI v2.2 is a French-language framework)"
+  - "Report MUST identify each audit team member by name, contact, role (responsable d'équipe / auditeur / expert) and the activities they performed (§VI.6.1.d)"
+  - "Report MUST identify qualification status, qualification level, and audit activities performed (§VI.6.1.a–c)"
+  - "Mandatory annexes: plan d'audit + note de cadrage (§VI.6.5)"
+  - "Provider MUST proceed to 'restitution, effacement ou destruction' of audit data with documented proof (§VI.7)"
 languages:
-  - fr (preferred for client delivery)
-  - en (optional)
+  - fr (preferred for client delivery; reference language)
+  - en (optional translation)

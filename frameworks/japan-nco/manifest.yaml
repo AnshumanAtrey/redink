@@ -1,9 +1,14 @@
 id: japan-nco
-name: Japan NCO / NISC Government Cybersecurity Audit Report
-region: Japan
-audience: Japanese government agencies + essential infrastructure providers
-status: skeleton
-output_format: docx
+name: Japan ISMAP / NISC Information Security Audit Report
+region: Japan — ISMAP Steering Committee (METI, MIC, NISC, Digital Agency); operated through IPA
+audience: |
+  ISMAP-registered audit institutions only (firm-level registration on the ISMAP
+  Audit Institutions List). Individual auditors must hold CISA / CISSP or
+  equivalent and demonstrated cloud experience; auditors in practice are
+  Japanese nationals due to language and clearance constraints. NCO (formerly
+  NISC, restructured July 2025) is the overall coordinator.
+status: production-ready
+output_format: docx + PDF, all in Japanese
 sections:
   - 01-cover-page
   - 02-document-control
@@ -20,13 +25,35 @@ sections:
   - 24-glossary
   - 25-acronyms
   - 27-incident-reporting
-report_title: "NCO / NISC Cybersecurity Audit Report"
+report_title: "ISMAP情報セキュリティ監査報告書 (ISMAP Information Security Audit Report)"
 official_sources:
-  - https://www.cyber.go.jp/eng/
+  - https://www.ismap.go.jp/csm/
+  - https://www.ismap.go.jp/csm/sys_attachment.do?sys_id=cd840cc92b072a90434ff14a6e91bf9a
   - https://www.nisc.go.jp/eng/
-  - https://www.ipa.go.jp/en/security/jisec/index.html
-finding_id_format: "JP-001"
+  - https://www.cyber.go.jp/eng/
+finding_id_format: "ISMAP-NNNN with cross-reference to ISMAP control criterion (Governance / Management / Control layer + item number)"
 hard_rules:
-  - "Common Standards on Cybersecurity Measures of Governmental Entities define baseline"
+  - "Audit must cover 100% of applicable ISMAP criteria — 18 Governance + 85 Management + 1,095 Control criteria — every annual cycle; sampling not acceptable at criteria level"
+  - "Based on JIS Q 27001 (ISO/IEC 27001), JIS Q 27002 (ISO/IEC 27002) and JIS Q 27017 (ISO/IEC 27017 cloud) — references must be cited explicitly"
+  - "All application documents, control descriptions, and IPA Q&A correspondence must be in Japanese; English-source evidence requires certified Japanese translation"
+  - "Audit institution must appear on the official ISMAP Audit Institutions List at the date the report is issued"
+  - "Annual re-assessment is mandatory — ISMAP registration expires if a current audit report is not on file"
+  - "Auditor independence: audit firm cannot also provide consulting on the same scope within the prior 2 years"
   - "Active Cyber Defense Act (ACDA) — incident-reporting required for specified essential infrastructure providers (effective ~Nov 2026)"
-  - "NCO (former NISC) is the overall coordinator since July 2025 reorganization"
+severity_classification: |
+  Control implementation status per criterion (実施 / 部分実施 / 未実施 / 適用外 —
+  implemented / partial / not implemented / not applicable), plus risk rating
+  for gaps.
+control_status_enum: [実施, 部分実施, 未実施, 適用外]
+control_catalogue_reference: |
+  ISMAP Control Criteria (Governance Standards 18 items, Management Standards
+  85 items, Control Standards 1,095 items) — derived from JIS Q 27001/27002/27017
+  plus Japanese government-specific overlays.
+unique_aspects: |
+  One of the most granular cloud-assurance frameworks globally with ~1,200 total
+  criteria assessed annually at 100% coverage. Uniquely combines NISC's national-
+  cybersecurity strategy oversight with IPA technical administration.
+submission_requirements:
+  - "Japanese language mandatory throughout the deliverable"
+  - "Submitted by the CSP via the ISMAP portal to the ISMAP Steering Committee with the audit report, scope statement, management confirmation, and breach/improvement-plan appendices"
+  - "Approved services are listed on the ISMAP Cloud Service List, refreshed annually"

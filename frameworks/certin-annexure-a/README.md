@@ -1,6 +1,6 @@
 # CERT-In Annexure-A
 
-**Status:** ✅ Implemented · **Region:** 🇮🇳 India · **Audience:** CERT-In empaneled auditors
+**Status:** ✅ Production-ready · **Region:** 🇮🇳 India · **Audience:** CERT-In empaneled auditors
 
 CERT-In (Indian Computer Emergency Response Team) empaneled auditors produce VAPT reports in the **Annexure-A** format. This preset bundles the 13 sections required by the Annexure-A structure:
 

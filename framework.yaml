@@ -5,28 +5,29 @@
 # which you can override per-engagement in report-recipe.yaml (via /redink-recipe).
 #
 # The universal validators (CWE/CVE/CVSS/EPSS) run the same for every framework;
-# only the report sections + per-finding field shape differ.
+# only the report sections, per-finding field shape, and signing / submission
+# requirements differ.
 
-framework: certin-annexure-a
+framework: owasp-optrs
 
-# Supported values (status in parentheses):
-#   certin-annexure-a       (✅ implemented — India, CERT-In empaneled auditors)
-#   owasp-optrs             (✅ implemented — global, JSON-native machine-readable)
-#   cmmc-level-3            (🚧 skeleton    — USA, DoD contractors via C3PAOs)
-#   ncsc-check              (🚧 skeleton    — UK, CHECK-accredited testers)
-#   pci-dss-roc             (🚧 skeleton    — global, PCI QSAs / ISAs)
-#   crest-cdpt              (🚧 skeleton    — UK / global, CREST CDPT)
-#   irap                    (🚧 skeleton    — Australia, ASD-registered IRAP assessors)
-#   passi                   (🚧 skeleton    — France, ANSSI PASSI-qualified providers)
-#   russia-fstec            (🚧 skeleton    — Russia, FSTEC / FSB)
-#   japan-nco               (🚧 skeleton    — Japan, NCO / NISC / IPA)
-#   singapore-ccop          (🚧 skeleton    — Singapore, CSA CCoP 2.0)
-#   k-isms-p                (🚧 skeleton    — South Korea, KISA ISMS-P)
-#   switzerland-ncsc        (🚧 skeleton    — Switzerland, NCSC)
-#   israel-incd             (🚧 skeleton    — Israel, INCD ICDM 2.0)
-#   germany-bsi-grundschutz (🚧 skeleton    — Germany, BSI IT-Grundschutz)
-#   uae-nesa                (🚧 skeleton    — UAE, NESA / TDRA)
-#   saudi-nca-ecc           (🚧 skeleton    — Saudi Arabia, NCA Essential Cybersecurity Controls)
+# Supported values (region — audience):
+#   cmmc-level-3            — USA, DoD contractors assessed by C3PAOs (Level 2) or DCMA DIBCAC (Level 3)
+#   pci-dss-roc             — global card industry, PCI SSC QSAs / ISAs (v4.0.1)
+#   ncsc-check              — UK, NCSC CHECK Green-Light providers (HMG, CNI)
+#   crest-cdpt              — global, CREST-Accredited Member Companies
+#   passi                   — France, ANSSI-qualified PASSI auditeurs (substantiel / élevé)
+#   germany-bsi-grundschutz — Germany, BSI-licensed IT-Grundschutz auditors
+#   switzerland-ncsc        — Switzerland, BACS/NCSC + FINMA-supervised institutions
+#   israel-incd             — Israel, INCD-recognized assessors (ICDM 2.0)
+#   uae-nesa                — UAE, SIA-accredited assessors (IA Standard v1.1)
+#   saudi-nca-ecc           — Saudi Arabia, NCA-licensed Cybersecurity Service Providers (Haseen)
+#   irap                    — Australia, ASD-registered IRAP assessors
+#   k-isms-p                — South Korea, KISA-registered ISMS-P certification bodies
+#   japan-nco               — Japan, ISMAP-registered audit institutions (NCO / NISC)
+#   singapore-ccop          — Singapore, CSA-approved CII auditors (Cybersecurity Act 2018)
+#   russia-fstec            — Russia, FSTEC-licensed attestation organisations
+#   certin-annexure-a       — India, CERT-In empanelled auditors
+#   owasp-optrs             — global open standard, machine-readable JSON for CI/CD + SOAR
 #
 # To list supported frameworks in Claude Code:  /redink-frameworks
 # To pick which sections to include:           /redink-recipe

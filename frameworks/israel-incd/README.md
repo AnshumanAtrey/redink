@@ -1,6 +1,6 @@
 # Israel INCD ICDM 2.0
 
-**Status:** 🚧 Skeleton · **Region:** 🇮🇱 Israel · **Audience:** Regulated entities + INCD-recognized assessors
+**Status:** ✅ Production-ready · **Region:** 🇮🇱 Israel · **Audience:** Regulated entities + INCD-recognized assessors
 
 Israeli Cyber Defense Methodology version 2.0, published by Israel National Cyber Directorate. Adopts NIST CSF 1.1 + NIST SP 800-53 R5 + Threat-Informed Defense + Zero-Trust paradigms.
 

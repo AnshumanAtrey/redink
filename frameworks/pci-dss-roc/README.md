@@ -1,6 +1,6 @@
 # PCI DSS ROC
 
-**Status:** 🚧 Skeleton · **Region:** 🌍 Global · **Audience:** PCI QSAs / ISAs
+**Status:** ✅ Production-ready · **Region:** 🌍 Global · **Audience:** PCI QSAs / ISAs
 
 PCI DSS Report on Compliance — produced by QSAs for cardholder-data-environment assessments. PCI SSC mandates their ROC reporting template; redink produces structured content the QSA imports into that template.
 
@@ -8,9 +8,9 @@ See [`manifest.yaml`](manifest.yaml).
 
 ## Status — needs PR
 
-- 🚧 Full PCI DSS v4.0.1 requirement catalog needed in `controls.yaml`
-- 🚧 Compensating Control Worksheet (§16) field validation
-- 🚧 Cardholder Data Environment (CDE) scoping templates
+- Full PCI DSS v4.0.1 requirement catalog needed in `controls.yaml`
+- Compensating Control Worksheet (§16) field validation
+- Cardholder Data Environment (CDE) scoping templates
 
 ## Official sources
 

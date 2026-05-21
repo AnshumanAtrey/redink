@@ -1,6 +1,6 @@
 # K-ISMS-P (Korea)
 
-**Status:** 🚧 Skeleton · **Region:** 🇰🇷 South Korea · **Audience:** KISA-certified entities
+**Status:** ✅ Production-ready · **Region:** 🇰🇷 South Korea · **Audience:** KISA-certified entities
 
 Korea's integrated Personal Information + Information Security Management System certification, since 2018. 102 controls (80 infosec + 22 PII). **From Q3 2026: mandatory live red-teaming + continuous monitoring** — the audit model shifts from annual snapshot to real-time posture.
 

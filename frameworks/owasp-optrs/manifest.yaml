@@ -2,7 +2,7 @@ id: owasp-optrs
 name: OWASP Penetration Test Reporting Standard
 region: Global / industry standard
 audience: Any pentest team — machine-readable JSON for downstream tools
-status: implemented
+status: production-ready
 output_format: json
 sections:
   - 01-cover-page

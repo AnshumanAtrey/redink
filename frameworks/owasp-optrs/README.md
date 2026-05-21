@@ -1,6 +1,6 @@
 # OWASP OPTRS
 
-**Status:** ✅ Implemented · **Region:** 🌍 Global · **Audience:** Any pentest team
+**Status:** ✅ Production-ready · **Region:** 🌍 Global · **Audience:** Any pentest team
 
 The OWASP Penetration Test Reporting Standard targets **machine consumers** (SIEMs, vuln management platforms, ticketing systems). Output is JSON only; no docx.
 

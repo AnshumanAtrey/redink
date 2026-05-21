@@ -1,9 +1,17 @@
 id: cmmc-level-3
-name: CMMC Level 2/3 Final Assessment Report
-region: USA (DoD)
-audience: DoD contractors assessed by C3PAOs
-status: skeleton
-output_format: docx
+name: CMMC Level 2 / Level 3 Certification Assessment Report
+region: United States — US Department of Defense (DoD CIO)
+audience: |
+  Organizations Seeking Certification (OSCs) in the Defense Industrial Base
+  handling Controlled Unclassified Information (CUI). Level 2 assessed by
+  Cyber-AB authorized C3PAOs employing CMMC Certified Assessors (CCAs) with
+  Tier 3 DoD background determination. Level 3 assessed ONLY by DCMA DIBCAC;
+  requires Final Level 2 (C3PAO) status as prerequisite.
+status: production-ready
+output_format: |
+  Assessment package uploaded to CMMC eMASS (Enterprise Mission Assurance
+  Support Service); automated transmission to SPRS. PDF/DOCX final report
+  retained by C3PAO and OSC.
 sections:
   - 01-cover-page
   - 02-document-control
@@ -23,14 +31,38 @@ sections:
   - 24-glossary
   - 25-acronyms
   - 26-signoff
-report_title: "CMMC Final Assessment Report (FAR)"
+report_title: "CMMC Level 2 / Level 3 Certification Assessment Results Package (per 32 CFR §170.17 / §170.18)"
 official_sources:
+  - https://www.ecfr.gov/current/title-32/subtitle-A/chapter-I/subchapter-G/part-170
+  - https://dodcio.defense.gov/CMMC/about/
   - https://dodcio.defense.gov/Portals/0/Documents/CMMC/AssessmentGuideL2.pdf
   - https://dodcio.defense.gov/Portals/0/Documents/CMMC/AssessmentGuideL3.pdf
-  - https://www.ecfr.gov/current/title-32/subtitle-A/chapter-I/subchapter-G/part-170
-finding_id_format: "F-001"
+  - https://cyberab.org/
+finding_id_format: "NIST SP 800-171 Rev 2 control IDs (e.g., AC.L2-3.1.1, SC.L2-3.13.11) for Level 2; NIST SP 800-172 IDs for Level 3"
 hard_rules:
-  - "Controls rated Met / Not Met / Not Applicable per 32 CFR §170.24"
-  - "Final report uploaded to CMMC eMASS; transmitted to SPRS"
+  - "Each requirement scored MET / NOT MET / NOT APPLICABLE per 32 CFR §170.17(a)(1) and Assessment Guide L2"
+  - "Level 2 maximum score = 110 (one point per 800-171 control, partial deductions per SPRS methodology in §170.24)"
+  - "Conditional Level 2 (C3PAO) issued if POA&M exists; POA&M closeout assessment required within 180 days of CMMC Status Date — 32 CFR §170.17(a)(1)(ii)(B)"
+  - "Certification valid 3 years from CMMC Status Date — 32 CFR §170.17(a)(1)"
+  - "Annual Affirmation by Affirming Official submitted to SPRS at assessment and every 12 months — 32 CFR §170.17(a)(2), §170.22"
+  - "Level 3 requires Final Level 2 prerequisite; assessed by DCMA DIBCAC only; covers 24 selected enhanced requirements from NIST SP 800-172"
+  - "C3PAO uploads results to CMMC eMASS; auto-transmitted to SPRS — 32 CFR §170.17(a)(1)"
   - "Independent QA reviewer required (not on assessment team)"
+severity_classification: |
+  Binary per-control: MET / NOT MET / NOT APPLICABLE. Aggregate Status:
+  Final Level 2 (C3PAO) | Conditional Level 2 (C3PAO) | Final Level 3 (DIBCAC)
+  | Conditional Level 3 (DIBCAC). Controls-conformance audit, not a CVSS-based
+  vulnerability assessment.
 control_status_enum: [Met, Not Met, Not Applicable]
+control_catalogue_reference: |
+  Level 2: NIST SP 800-171 Rev 2 — 110 security requirements across 14 families.
+  Level 3: NIST SP 800-172 (Feb 2021) — 24 selected enhanced requirements.
+unique_aspects: |
+  Pass/fail conformance model with 3-year validity, government-mandated for
+  DoD contracts touching CUI, codified in federal regulation (32 CFR Part 170).
+  Results feed SPRS and gate contract award eligibility under DFARS 252.204-7021.
+submission_requirements:
+  - "C3PAO uploads full assessment package + SPRS score to CMMC eMASS"
+  - "Affirming Official submits affirmation in SPRS at certification and every 12 months — 32 CFR §170.22"
+  - "POA&M closeout (if Conditional) must be assessed and posted within 180 days"
+  - "Level 3 results submitted by DIBCAC, not the OSC; OSC still files annual affirmation in SPRS"

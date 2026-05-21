@@ -1,6 +1,6 @@
 # Japan NCO / NISC
 
-**Status:** 🚧 Skeleton · **Region:** 🇯🇵 Japan · **Audience:** Government + essential infrastructure providers
+**Status:** ✅ Production-ready · **Region:** 🇯🇵 Japan · **Audience:** Government + essential infrastructure providers
 
 Following July 2025 reorganization, the National Cybersecurity Office (NCO) replaced NISC as the overall coordinator. Common Standards on Cybersecurity Measures of Governmental Entities define the audit baseline. ACDA (effective Nov 2026) adds incident-reporting requirements.
 

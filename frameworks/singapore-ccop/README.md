@@ -1,6 +1,6 @@
 # Singapore CSA CCoP 2.0
 
-**Status:** 🚧 Skeleton · **Region:** 🇸🇬 Singapore · **Audience:** CII owners (11 sectors)
+**Status:** ✅ Production-ready · **Region:** 🇸🇬 Singapore · **Audience:** CII owners (11 sectors)
 
 Cybersecurity Code of Practice v2.0 — mandatory for Critical Information Infrastructure owners under the Singapore Cybersecurity Act 2018. Biennial audit cycle with both compliance- and risk-based approaches.
 

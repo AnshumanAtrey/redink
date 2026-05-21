@@ -1,6 +1,6 @@
 # Saudi NCA ECC
 
-**Status:** 🚧 Skeleton · **Region:** 🇸🇦 Saudi Arabia · **Audience:** Entities under NCA Essential Cybersecurity Controls
+**Status:** ✅ Production-ready · **Region:** 🇸🇦 Saudi Arabia · **Audience:** Entities under NCA Essential Cybersecurity Controls
 
 Saudi National Cybersecurity Authority's baseline framework. 5 core domains, 114 controls. Findings often map to multiple frameworks (SAMA CSF, ISO 27001, PDPL) simultaneously.
 

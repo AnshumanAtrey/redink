@@ -2,7 +2,7 @@ id: certin-annexure-a
 name: CERT-In Annexure-A VAPT Report
 region: India
 audience: CERT-In empaneled auditors
-status: implemented
+status: production-ready
 output_format: docx
 sections:
   - 01-cover-page

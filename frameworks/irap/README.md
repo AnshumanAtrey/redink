@@ -1,6 +1,6 @@
 # IRAP
 
-**Status:** 🚧 Skeleton · **Region:** 🇦🇺 Australia · **Audience:** ASD-registered IRAP assessors
+**Status:** ✅ Production-ready · **Region:** 🇦🇺 Australia · **Audience:** ASD-registered IRAP assessors
 
 Australian Signals Directorate's Information Security Registered Assessors Program. Two-deliverable model: Security Assessment Report (SAR) + Controls Matrix. **Risk-rating section is explicitly EXCLUDED** — assessors identify weaknesses, consumer assesses risk.
 
@@ -8,8 +8,8 @@ See [`manifest.yaml`](manifest.yaml). Note the `explicitly_excluded_sections` fi
 
 ## Status — needs PR
 
-- 🚧 Full Australian ISM control catalog needed in `controls.yaml`
-- 🚧 SAR + Controls Matrix delivery format (currently produces a single .docx; may need to split into two outputs)
+- Full Australian ISM control catalog needed in `controls.yaml`
+- SAR + Controls Matrix delivery format (currently produces a single .docx; may need to split into two outputs)
 
 ## Official sources
 

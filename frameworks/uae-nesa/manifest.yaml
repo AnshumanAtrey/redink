@@ -1,9 +1,13 @@
 id: uae-nesa
-name: UAE NESA Information Assurance Audit Report
-region: United Arab Emirates
-audience: UAE entities subject to NESA / TDRA Information Assurance Standards
-status: skeleton
-output_format: docx
+name: UAE IA Compliance Audit Report (SIA / former NESA)
+region: United Arab Emirates — Signals Intelligence Agency (SIA), formerly National Electronic Security Authority (NESA)
+audience: |
+  SIA-accredited assessors (Help AG, CPX, DTS, and international firms with UAE
+  practice); mandatory for federal government entities and Critical Information
+  Infrastructure (CII) operators across banking, telecom, energy, transport,
+  healthcare.
+status: production-ready
+output_format: docx (master) + signed PDF + CSV/XLSX control register
 sections:
   - 01-cover-page
   - 02-document-control
@@ -20,12 +24,39 @@ sections:
   - 22-references
   - 23-appendices
   - 26-signoff
-report_title: "NESA Information Assurance Audit Report"
+report_title: "UAE Information Assurance Regulation v1.1 — Compliance Audit Report"
 official_sources:
-  - https://www.iconnectitbs.com/nesa-compliance-uae/
-finding_id_format: "NESA-001"
+  - https://sia.gov.ae/en
+  - https://tdra.gov.ae/-/media/About/Anti-Spam/IAS-Brief-EN.ashx
+  - https://dionach.com/nesa-uae-information-assurance-standards/
+finding_id_format: "IAS-<FAMILY>-<NNN> (e.g., IAS-T5-022 for Access Control sub-control 22)"
 hard_rules:
-  - "188 security controls — Management Controls + Technical Controls"
-  - "Management Controls: governance, policy, leadership accountability, compliance monitoring, awareness"
-  - "Technical Controls: encryption, secure design, segmentation, malware defenses, IDS"
-  - "Aligned with ISO/IEC 27001 for ISMS"
+  - "All 188 controls must be evaluated: 60 Management controls across 6 families (M1 Strategy/Planning-15, M2 ISRM-11, M3 Awareness/Training-8, M4 HR Security-8, M5 Compliance-13, M6 Performance Evaluation-5) plus 128 Technical controls across 9 families (T1 Asset Mgmt-10, T2 Physical/Env-16, T3 Operations-17, T4 Communications-15, T5 Access Control-22, T6 Third Party-6, T7 SDLC-25, T8 Incident Mgmt-13, T9 Continuity-4)"
+  - "The 35 mandatory always-applicable controls (all from M-families) must be marked Compliant for any compliance attestation; technical controls follow risk-based applicability"
+  - "All controls must be prioritized P1-P4 (39 P1, 69 P2, 35 P3, 45 P4) and findings sequenced by priority for remediation; P1 controls address ~80% of NESA's 24 identified threat scenarios"
+  - "CII operators face SIA's 4-tier enforcement: (1) Reporting/self-assessment, (2) Auditing with evidence requests, (3) SIA-commissioned testing, (4) National Security Intervention — report must clearly state which tier the engagement fulfills"
+  - "Threat coverage matrix must reference NESA's 24-threat catalogue (T1-T24 in IAS Annex A); each technical control finding cross-references the threats it mitigates"
+  - "Sub-control level reporting: 188 controls expand to 700 sub-controls (136 mandatory + 564 risk-based) — assessor must score at sub-control granularity"
+severity_classification: |
+  Per-control rating: Compliant / Partially Compliant / Non-Compliant / Not
+  Applicable, combined with control priority (P1-P4). Overall posture computed
+  as weighted compliance percentage with P1 weighted highest. Finding severity
+  (Critical/High/Medium/Low) derived from priority and threat-mapping coverage.
+control_status_enum: [Compliant, Partially Compliant, Non-Compliant, Not Applicable]
+control_catalogue_reference: |
+  UAE IA Standard v1.1 — 188 controls / 700 sub-controls across 15 families
+  (6 Management M1-M6 + 9 Technical T1-T9), 4 priority tiers, mapped to 24
+  threat scenarios.
+unique_aspects: |
+  Only Middle East framework with explicit priority-based phased rollout
+  (P1-P4) decoupled from criticality, allowing entities to plan rather than
+  score in a single binary. SIA's 4-tier enforcement ladder (Report → Audit →
+  Test → National Security Intervention) is also unique in the region.
+submission_requirements:
+  - "Bilingual delivery: Arabic and English versions, both signed; Arabic governs for federal government submissions"
+  - "Submitted via the entity's regulatory channel (TDRA for telecom; CBUAE for banks; SIA direct for federal CII; DESC for Dubai government entities)"
+  - "Digital signature using UAE Pass or Emirates ID-linked PKI for the assessor's engagement lead"
+  - "Quarterly compliance posture summary required for CII operators; full audit report every 24 months"
+languages:
+  - ar (authoritative for federal government)
+  - en

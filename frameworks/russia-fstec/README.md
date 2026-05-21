@@ -1,6 +1,6 @@
 # Russia FSTEC / FSB
 
-**Status:** 🚧 Skeleton · **Region:** 🇷🇺 Russia · **Audience:** Russian regulated entities + auditors
+**Status:** ✅ Production-ready · **Region:** 🇷🇺 Russia · **Audience:** Russian regulated entities + auditors
 
 Two regulators in Russia: FSTEC (non-cryptographic technical means) and FSB (cryptographic protection). Certifications run on a biennial audit cycle.
 

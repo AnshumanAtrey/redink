@@ -1,9 +1,15 @@
 id: russia-fstec
-name: Russia FSTEC / FSB Compliance Audit Report
-region: Russia
-audience: Russian regulated entities + their auditors
-status: skeleton
-output_format: docx
+name: FSTEC Аттестат соответствия / Certification & Attestation Report
+region: Russian Federation — Federal Service for Technical and Export Control (FSTEC); CII oversight jointly with FSB (NCCC / GosSOPKA)
+audience: |
+  FSTEC-licensed organisation (must hold valid FSTEC licence for technical
+  protection of confidential information / TZKI — техническая защита
+  конфиденциальной информации). Individual experts must hold FSTEC-recognised
+  qualification; foreign assessors are not eligible.
+status: production-ready
+output_format: |
+  docx + signed PDF; paper original with wet signature and organisational seal
+  also required for the аттестат.
 sections:
   - 01-cover-page
   - 03-executive-summary
@@ -15,12 +21,38 @@ sections:
   - 19-compliance-statement
   - 21-limitations
   - 22-references
-report_title: "FSTEC Compliance Audit Report"
+report_title: |
+  "Аттестат соответствия требованиям по безопасности информации" (Certificate
+  of Conformity to Information Security Requirements) + underlying "Отчёт об
+  аттестационных испытаниях" (Attestation Testing Report); for CII objects,
+  additional GosSOPKA reporting under FZ-187.
 official_sources:
+  - https://fstec.ru/
   - https://fstec.ru/en
-finding_id_format: "FSTEC-001"
+  - http://government.ru/en/department/96/
+finding_id_format: "FSTEC-NNN cross-referenced to specific Order article (Приказ ФСТЭК № 17 / № 21 / № 31 / № 239) and ГОСТ Р standard clause"
 hard_rules:
-  - "FSTEC: non-cryptographic technical means of data protection"
-  - "FSB certifications: cryptographic protection software subsystems"
-  - "Biennial audit cycle; certificate of compliance is unlimited-term subject to biennial review"
-  - "FSB certification requirements are NOT public; FSTEC details require formal access"
+  - "All deliverables MUST be in Russian — statutory requirement; English-only reports are not legally valid for FSTEC submission or KII (КИИ) attestation"
+  - "Applicable Order depends on system type and is mandatory: Order No. 17 (state information systems / ГИС), Order No. 21 (personal-data information systems / ИСПДн), Order No. 31 (industrial automated control systems / АСУ ТП), Order No. 239 (significant CII objects under FZ-187)"
+  - "For CII (КИИ) objects: categorisation into one of 3 categories (Category 1 highest), notification to FSTEC required, connection to GosSOPKA (under FSB / NCCC) mandatory, incident reporting to NCCC within timeframes set by FZ-187"
+  - "Trust-level assignment per FSTEC Order No. 76 (02.06.2020) — 6 levels of confidence (УД1–УД6) — must be stated for any certified information-protection means used"
+  - "Аттестат соответствия issued by an FSTEC-licensed attestation organisation; underlying testing performed by a separate FSTEC-licensed testing laboratory where required (separation of test and attest functions)"
+  - "Compliance basis is the FSTEC certification system regulation (Order No. 55 of 03.04.2018); referenced ГОСТ standards include ГОСТ Р 56939, ГОСТ Р 51583, ГОСТ Р 51624"
+severity_classification: |
+  Соответствует / Не соответствует (conforms / does not conform) per requirement;
+  non-conforming items block issuance of the аттестат until remediated and
+  re-tested.
+control_status_enum: [Соответствует, Не соответствует, Не применимо]
+control_catalogue_reference: |
+  Orders № 17 / № 21 / № 31 / № 239 control sets (selected by system class and
+  protection class K1/K2/K3 or significance category), plus ГОСТ Р series and
+  Order № 76 trust levels.
+unique_aspects: |
+  The only framework in this set where the report doubles as a legal-conformity
+  certificate (аттестат) carrying statutory effect, and where a parallel report
+  stream to a second agency (FSB/NCCC for GosSOPKA) is mandated by law for
+  critical-infrastructure operators.
+submission_requirements:
+  - "Russian language mandatory for the аттестат, the attestation testing report, the threat model (модель угроз) and the protection-system design"
+  - "Wet signature of licensed attestation organisation's authorised representative + organisational seal on the paper original"
+  - "For КИИ objects: parallel submission of categorisation report to FSTEC under FZ-187 and connection/incident reporting to NCCC (GosSOPKA) under FSB administration"

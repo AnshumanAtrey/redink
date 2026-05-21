@@ -1,9 +1,12 @@
 id: israel-incd
-name: Israel INCD ICDM 2.0 Assessment Report
-region: Israel
-audience: Israeli regulated entities + INCD-recognized assessors
-status: skeleton
-output_format: docx
+name: ICDM 2.0 Cyber Audit Findings Report
+region: Israel — Israel National Cyber Directorate (INCD)
+audience: |
+  INCD-recognized auditors; mandatory for regulated sectors (CMISA-supervised
+  financial entities, MoH healthcare orgs, MoC telecom operators); all
+  government offices since 2021.
+status: production-ready
+output_format: docx + signed PDF (Hebrew master + English translation)
 sections:
   - 01-cover-page
   - 02-document-control
@@ -22,12 +25,39 @@ sections:
   - 23-appendices
   - 26-signoff
   - 28-continuous-monitoring
-report_title: "Israeli Cyber Defense Methodology (ICDM 2.0) Assessment Report"
+report_title: "Cyber Defense Methodology for an Organization — Audit Findings Summary (Doctrine 2.0)"
 official_sources:
+  - https://www.gov.il/en/departments/israel_national_cyber_directorate
+  - https://www.gov.il/BlobFolder/policy/cyber_security_methodology_for_organizations/en/Cyber%20Defense%20Methodology%20for%20an%20Oragnization.pdf
   - https://www.nist.gov/cyberframework/success-stories/israel-national-cyber-directorate-version-20
-  - https://shavitglobal.com/grc/ncsf-national-cyber-security-framework-in-israel/
-finding_id_format: "INCD-001"
+finding_id_format: "INCD-<FUNCTION>-<NNN> (e.g., INCD-PR-014 for Protect-014)"
 hard_rules:
-  - "ICDM 2.0 adopts NIST CSF 1.1 + NIST SP 800-53 Rev. 5 + Threat-Informed Defense + Zero-Trust"
-  - "Continuous risk management practices required (not just point-in-time audit)"
-  - "Sector-specific rules layered on top of the universal ICDM 2.0 baseline"
+  - "Organization must first self-classify as Category A (low cyber-attack harm risk) or Category B (high cyber-attack harm risk); Category B triggers full ICDM 2.0 control set"
+  - "Report must align findings to the five NIST CSF 1.1 functions adopted verbatim by ICDM: Identify, Protect, Detect, Respond, Recover"
+  - "Sector annexes are mandatory layer-on: CMISA Proper Conduct Directive 361 (banks/insurers), MoH Circular 322 (healthcare), MoC licence conditions (telecom)"
+  - "Each control must report a maturity rating on the 5-tier organizational maturity model (Initial / Repeatable / Defined / Managed / Optimized) plus CIA-triad relevance"
+  - "Critical-infrastructure entities under INCD purview must route the report through INCD's CERT-IL liaison; sectoral regulator (BoI / MoH / MoC) receives a copy"
+  - "Hebrew is the authoritative version; English translation permitted for international parent companies but Hebrew governs in case of dispute"
+severity_classification: |
+  Findings rated by maturity gap (target tier minus current tier) combined with
+  CIA impact. Aggregated as a function-level maturity score (1.0-5.0) per
+  Identify/Protect/Detect/Respond/Recover, with overall posture computed as
+  weighted mean against the Category A or B target profile.
+control_status_enum: [Initial, Repeatable, Defined, Managed, Optimized]
+control_catalogue_reference: |
+  ICDM 2.0 (Cyber Defense Doctrine 2.0, 2021) — built on NIST CSF 1.1 with
+  Israeli-specific extensions; layered with sector annexes (financial CMISA
+  Directive 361, healthcare MoH 322, telecom MoC licence).
+unique_aspects: |
+  Only Middle East framework explicitly built atop NIST CSF rather than ISO
+  27001, and uniquely uses a public Hebrew/English dual-publish model with INCD
+  as the central methodology owner while sectoral regulators (BoI, MoH, MoC)
+  handle enforcement.
+submission_requirements:
+  - "Hebrew master + English translation as PDF/A-2b, digitally signed (Israeli ITL-approved CA) by the engagement lead and the audited organization's CISO"
+  - "Submitted to the sectoral regulator (BoI for banks, CMISA for insurers/CMs, MoH cyber unit, MoC) with CC to INCD Sectoral CERT"
+  - "Includes Hebrew-language executive summary (max 2 pages) — gov.il forms require Hebrew"
+  - "Findings register exportable as CSV for INCD's national risk telemetry rollup"
+languages:
+  - he (authoritative)
+  - en (international parent companies)

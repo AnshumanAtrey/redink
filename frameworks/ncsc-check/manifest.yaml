@@ -1,9 +1,17 @@
 id: ncsc-check
-name: NCSC CHECK Penetration Test Report
-region: United Kingdom
-audience: CHECK-accredited testing providers (UK government / CNI clients)
-status: skeleton
-output_format: docx
+name: Assured CHECK Penetration Test Report
+region: United Kingdom — NCSC (National Cyber Security Centre, part of GCHQ)
+audience: |
+  Mandatory for government departments, public sector bodies and the UK's
+  critical national infrastructure (CNI). Must be delivered by an NCSC-approved
+  CHECK Company. CHECK Team Leaders (CTLs) must hold a UK Cyber Security Council
+  Security Testing Title at the "Principal" level minimum + SC clearance.
+  CHECK Team Members (CTMs) must hold UKCSC Security Testing Title at
+  "Practitioner" level + SC clearance.
+status: production-ready
+output_format: |
+  docx or pdf with UK Crown marking — OFFICIAL or higher (scope may include
+  systems up to TOP SECRET, excluding STRAP).
 sections:
   - 01-cover-page
   - 02-document-control
@@ -24,13 +32,44 @@ sections:
   - 22-references
   - 23-appendices
   - 26-signoff
-report_title: "CHECK Penetration Test Report"
+report_title: "CHECK Penetration Test Report (per Assured CHECK Scheme Standard v1.1, Nov 2024)"
 official_sources:
   - https://www.ncsc.gov.uk/schemes/check/introduction
   - https://www.ncsc.gov.uk/files/CHECK-Scheme-Standard.pdf
+  - https://www.ncsc.gov.uk/files/CHECK-Working-practices.pdf
   - https://www.ncsc.gov.uk/schemes/check/information-for-providers
-finding_id_format: "CHK-001"
+finding_id_format: "CHK-NNN (provider sets numbering; Standard mandates vulnerabilities be 'accurately identified', grouped 'into the same type or class', with affected hosts and 'relevant TCP or UDP port numbers')"
 hard_rules:
-  - "Report signed by a CHECK Team Leader holding the appropriate UK CSC Security Testing title"
-  - "Team members must be eligible for SC clearance"
-  - "Provider must follow their accredited quality control process (Technical Lead responsible)"
+  - "The CHECK Assured Service Provider — CHECK Penetration Testing logo must be clearly displayed on the report cover (Para 37a)"
+  - "The report must be signed off by the Primary CHECK Team Leader; name of author and Primary CTL must appear in the report (Para 37c)"
+  - "The report must not contain any sensitive data (as determined by the Customer), passwords or any Personally Identifiable Information (PII) (Para 37d)"
+  - "Executive Summary is mandatory, directed at a non-technical audience; must include scope-fit, overall security posture, highest vulnerability impact achieved, key findings + impact, key recommendations (Para 37e i–iv)"
+  - "The author must always use neutral language, for example 'allow/deny list' rather than 'white/black list' (Para 37g — added in v1.1, Nov 2024)"
+  - "Customer must retain all protectively marked reports and make them available to the NCSC on request; provider's contract must include a contractual right to provide NCSC with a copy of the CHECK report (Para 6j)"
+  - "After Customer confirms receipt, the Company must erase all test data, or transfer the data to a secure internal repository (Para 36)"
+severity_classification: |
+  "CHECK reports must state the level of risk as HIGH, MEDIUM, LOW or
+  INFORMATIONAL. In addition to (but not in place of) this rating, you may
+  also use the Common Vulnerability Scoring System (CVSS)" (Para 41).
+  Risk level "determined by combining your knowledge of the severity of the
+  vulnerability (the CVSS score), with the impact on the Customer if that
+  vulnerability were exploited, and your knowledge of mitigations or other
+  controls in place" (Para 42).
+control_status_enum: [High, Medium, Low, Informational]
+control_catalogue_reference: |
+  CHECK Technical Testing Methodology (Section B) + Annex A (Infrastructure:
+  network mapping, port scanning, service enumeration, vulnerability assessment,
+  exploitation, post-exploitation) + Annex B (Web Application: API/endpoint
+  enumeration, vulnerability assessment, OWASP Top 10, exploitation, CSRF + XSS
+  with different user roles).
+unique_aspects: |
+  Only UK scheme where the report is a Crown-marked instrument: the document
+  itself is handled at UK OFFICIAL or higher, the CTL sign-off is a named
+  accountability requirement, and the NCSC retains a contractual right of audit
+  access to every report produced under the scheme.
+submission_requirements:
+  - "Delivery to Customer; provider must contractually guarantee NCSC right of access to a copy"
+  - "Protective marking applied per UK Government Security Classifications (minimum OFFICIAL)"
+  - "Cover page must carry the CHECK Assured Service Provider logo"
+  - "Report signed off by named Primary CHECK Team Leader (CTL) holding SC clearance minimum and UK CSC Security Testing 'Principal' title"
+  - "Customer signs off receipt before provider erases test data"

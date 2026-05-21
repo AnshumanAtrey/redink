@@ -1,9 +1,12 @@
 id: k-isms-p
-name: Korea K-ISMS-P Certification Audit Report
-region: South Korea
-audience: KISA-certified entities (info-comm service providers, e-commerce, etc.)
-status: skeleton
-output_format: docx
+name: Korea ISMS-P Certification Audit Report (정보보호 및 개인정보보호 관리체계)
+region: Republic of Korea — Korea Internet & Security Agency (KISA), under MSIT
+audience: |
+  KISA-designated certification body auditors (인증심사원) — must hold KISA-issued
+  auditor qualification. Lead auditor must be KISA-registered. Foreign auditors
+  are not eligible to sign.
+status: production-ready
+output_format: docx + PDF; submitted to KISA in Korean
 sections:
   - 01-cover-page
   - 02-document-control
@@ -18,14 +21,35 @@ sections:
   - 21-limitations
   - 22-references
   - 28-continuous-monitoring
-report_title: "K-ISMS-P Certification Audit Report"
+report_title: "정보보호 및 개인정보보호 관리체계(ISMS-P) 인증 심사 결과보고서 (ISMS-P Certification Audit Result Report)"
 official_sources:
+  - https://isms.kisa.or.kr/
   - https://www.pipc.go.kr/eng/user/lgp/bnp/certification.do
-  - https://www.security.land/south-korea-isms-p-certification-overhaul-2026/
-finding_id_format: "ISMSP-001"
+  - https://www.kisa.or.kr/EN/103
+finding_id_format: "ISMS-P-NNN cross-referenced to ISMS-P criterion code (e.g., 2.1.1, 3.2.4) — two-digit domain.sub.item structure"
 hard_rules:
-  - "102 controls: 80 information security + 22 personal information protection"
-  - "Audit conducted by KISA or MSIT-appointed assessment body"
-  - "Certification valid for 3 years; annual surveillance audit required"
-  - "From Q3 2026: mandatory live penetration testing as part of certification process"
-  - "From Q3 2026: continuous monitoring / real-time security posture assessment (transition from annual snapshot)"
+  - "Assessment covers exactly 102 detailed criteria: 80 information-security management criteria + 22 personal-information-protection criteria (current 2023 revision baseline)"
+  - "Combined ISMS-P certification is mandatory for assessing both info-security and personal-info management together; ISMS-only assessment uses the 80-criteria subset"
+  - "Report and all evidence must be in Korean; auditor signatures by KISA-registered individuals, not firm seals alone"
+  - "Certification valid for 3 years; mandatory annual surveillance audit (사후심사) in years 2 and 3 — each surveillance produces its own report"
+  - "Findings classified as 결함 (non-conformity) must include root cause analysis and required corrective-action timeline before certification is granted"
+  - "Mandatory for ISPs, IDC operators, online businesses meeting MSIT revenue/user thresholds (Telecommunications Business Act, Network Act)"
+  - "From Q3 2026: mandatory live penetration testing as part of certification process; continuous monitoring transition from annual snapshot"
+severity_classification: |
+  결함 (non-conformity, must be corrected pre-certification) / 권고 (recommendation
+  / observation, tracked for next surveillance) — binary blocking + advisory model.
+control_status_enum: [결함 (Non-conformity), 권고 (Recommendation), 적합 (Conforming)]
+control_catalogue_reference: |
+  ISMS-P certification criteria (102 items, organised into 3 areas: management
+  system establishment & operation, protection countermeasures, personal-
+  information processing-stage requirements).
+unique_aspects: |
+  One of the few national frameworks that integrates an information-security
+  management system and a privacy management system into a single audit
+  deliverable, with a fixed 102-criterion checklist rather than tailorable
+  controls.
+submission_requirements:
+  - "Korean language mandatory"
+  - "Submitted by certification body to KISA along with applicant's corrective-action evidence"
+  - "Final certificate (인증서) issued by KISA upon approval by the certification committee"
+  - "Annual surveillance audit reports submitted in years 2 and 3 of the 3-year certification cycle"

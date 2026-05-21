@@ -1,6 +1,6 @@
 # Germany BSI IT-Grundschutz
 
-**Status:** 🚧 Skeleton · **Region:** 🇩🇪 Germany · **Audience:** BSI-certified auditors
+**Status:** ✅ Production-ready · **Region:** 🇩🇪 Germany · **Audience:** BSI-certified auditors
 
 German Federal Office for Information Security's modular ISMS framework. ~100 modules across 10 layers, ISO 27001-compatible (via BSI Standards 200-1/200-2/200-3). Module-graded requirements: basic / standard / elevated.
 
@@ -8,9 +8,9 @@ See [`manifest.yaml`](manifest.yaml).
 
 ## Status — needs PR
 
-- 🚧 Full IT-Grundschutz module catalog (~100 modules) needed in `controls.yaml`
-- 🚧 German-language report variant
-- 🚧 BSI-provided Muster Auditbericht docx template integration
+- Full IT-Grundschutz module catalog (~100 modules) needed in `controls.yaml`
+- German-language report variant
+- BSI-provided Muster Auditbericht docx template integration
 
 ## Official sources
 
