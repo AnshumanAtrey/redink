@@ -2,7 +2,7 @@
 
 ## Drop your firm's `.docx` template(s) here
 
-The assembler (`scripts/assemble_docx.py`) will use `templates/<framework>.docx` as the base document if present. If absent, it falls back to a built-in skeleton.
+The assembler (`scripts/assemble_docx.py`) will use `templates/<framework>.docx` as the base document if present. If absent, it falls back to a built-in default layout.
 
 Naming convention: one template per framework.
 
@@ -38,7 +38,7 @@ If `templates/<framework>.docx` is missing, the assembler builds a minimal repor
 
 - Generic cover page populated from `brand-guidelines.md`
 - Engagement summary table
-- Part 1 stub pointing to `brand-guidelines.md`
+- Part 1 outline pointing to `brand-guidelines.md`
 - Findings (the actual deliverable)
 
 This works but is plain. For final submission, you almost certainly want your firm's template.

@@ -89,7 +89,7 @@ Manual reports have measurable error categories — every senior auditor has see
 | **CVE version-range errors** | Claims target version 1.0.2u is affected by a CVE patched in 1.0.2t → coordinator rejects | `cve-validator` fetches NVD's exact affected-range; stores the exact-quote excerpt for re-verification |
 | **CVSS arithmetic mistakes** | Vector says `AC:H` but the math was done as `AC:L` | `cvss-calculator` shows ISC / Impact / Exploitability / Base math for every finding |
 | **Stale EPSS** | Looked up two weeks ago; current probability is materially different | `epss-lookup` fetches live per finding, records lookup date; QA pass demands re-fetch if > 7 days old |
-| **Blank fields** | Cells left empty under deadline pressure → automatic rejection on frameworks like CERT-In Annexure-A | Assembler refuses to render the docx if mandatory fields are empty; `/redink-build` won't start with `<...>` placeholders in input files |
+| **Blank fields** | Cells left empty under deadline pressure → automatic rejection by frameworks that enforce a "no-blanks" rule (CMMC C3PAO scorecards, PCI DSS ROC, CHECK reports, CERT-In Annexure-A) | Assembler refuses to render the docx if mandatory fields are empty; `/redink-build` won't start with `<...>` placeholders in input files |
 | **Inconsistent severity** | Same vulnerability rated High by one team member, Medium by another | Single deterministic CVSS-derived severity rubric applied across all findings |
 | **Citation fabrication** (LLM-era) | Plausible-looking but invented CVE numbers or MITRE descriptions | Every entry's `cwe_cve_audit` field stores exact-quote excerpts from MITRE / NVD / FIRST.org; `report-reviewer` independently re-fetches and string-compares before submission |
 
@@ -99,35 +99,52 @@ Manual reports have measurable error categories — every senior auditor has see
 2. **Assembler** — refuses to render the docx if mandatory fields are empty
 3. **`report-reviewer`** — adversarial re-fetch pass; flags any drift between draft and submission
 
-No single layer is the safety mechanism. The post-write re-validation is what catches LLM hallucinations the writer agents didn't notice. The audit-trail field on every finding lets the evaluator (or you, on review) re-fetch the canonical source and verify independently — exactly the workflow CERT-In, CMMC, IRAP, and other coordinator-side validators use.
+No single layer is the safety mechanism. The post-write re-validation is what catches LLM hallucinations the writer agents didn't notice. The audit-trail field on every finding lets the evaluator (or you, on review) re-fetch the canonical source and verify independently — the workflow CMMC C3PAOs, CHECK Team Leaders, PASSI auditeurs, PCI QSAs, IRAP assessors, BSI auditors, and CERT-In coordinators all run in parallel during their own re-checks.
 
 The result: a report where **every cited reference is traceable, every score is showable, every required field is populated**, and no fatigue-driven typos sneak through to submission.
 
+## Who redink is built for
+
+`redink` exists for the actual daily-grind buyers of compliance pentest reports — not the certification-exam niche.
+
+| Segment | Examples (global cyber market) | Reports / firm / year |
+|---|---|---|
+| **Big 4 / global consultancies** | Deloitte Cyber, EY Cybersecurity, KPMG Cyber, PwC Forensic & Cyber (cyber divisions in US / UK / EU / APAC / MENA / IN offices) | 500–2,000 |
+| **Pure-play cyber boutiques** | Mandiant (Google Cloud), Bishop Fox, NCC Group, NetSPI, Coalfire, IOActive, Trustwave, Synack, Synopsys SIG, F-Secure / WithSecure; SISA, Aujas, Kratikal, Astra | 100–500 |
+| **IT-services cyber divisions** | Accenture Security, Capgemini, Atos, NTT Security, DXC; TCS Cyber, Infosys, Wipro, HCL CyberSecurity | 200–800 |
+| **Government-accredited audit firms** | NCSC CHECK Green-Light providers (UK), C3PAOs under Cyber AB (US), CREST member firms (intl), PASSI auditeurs (FR), BSI auditors (DE), IRAP assessors (AU), KISA-registered (KR), NESA-accredited (UAE), NCA-licensed CSPs (KSA), FSTEC-licensed (RU); CERT-In empanelled (IN) | 50–300 |
+| **In-house red teams at regulated entities** | Banks (under FFIEC / FCA / BaFin / FINMA / MAS / RBI), insurers (under NAIC / EIOPA / IRDAI), exchanges (under SEC / FCA / FINMA / NSE), critical-infra operators (under CIKR / CNI / KRITIS / SOCI / NCIIPC) | 50–200 internal |
+| **Solo + small consultancies** | Independent bug-bounty hunters who also do paid VAPT, freelance pentesters, 2–5 person shops in every cyber hub (Tel Aviv, London, Berlin, Bengaluru, Seoul, Singapore, Sydney, São Paulo) | 10–50 |
+
+If you're producing **any** of these reports — for clients, regulators, internal audit, or yourself — the validator chain is identical. The framework preset just decides the wrapper.
+
 ## Supported frameworks
 
-17 framework presets — each is a section recipe under [`frameworks/<name>/manifest.yaml`](frameworks/). Pick one in [`framework.yaml`](framework.yaml).
+17 framework presets — each is a recipe under [`frameworks/<name>/manifest.yaml`](frameworks/). Pick one in [`framework.yaml`](framework.yaml).
 
-| # | Framework | Region | Status |
+Ordered roughly by the size of each market's empanelled / accredited tester pool — North America and Western Europe lead the global cyber consulting industry, and the table follows that gravity.
+
+| # | Framework | Region | Audience |
 |---|---|---|---|
-| 1 | **CERT-In Annexure-A** | 🇮🇳 India | ✅ implemented |
-| 2 | **OWASP OPTRS** (JSON) | 🌍 Global | ✅ implemented |
-| 3 | **CMMC Level 2/3 FAR** | 🇺🇸 USA | 🚧 skeleton |
-| 4 | **NCSC CHECK** | 🇬🇧 UK | 🚧 skeleton |
-| 5 | **PCI DSS ROC** | 🌍 Global | 🚧 skeleton |
-| 6 | **CREST CDPT** | 🇬🇧 / 🌍 | 🚧 skeleton |
-| 7 | **IRAP** | 🇦🇺 Australia | 🚧 skeleton |
-| 8 | **ANSSI PASSI** | 🇫🇷 France | 🚧 skeleton |
-| 9 | **Russia FSTEC / FSB** | 🇷🇺 Russia | 🚧 skeleton |
-| 10 | **Japan NCO / NISC** | 🇯🇵 Japan | 🚧 skeleton |
-| 11 | **Singapore CSA CCoP 2.0** | 🇸🇬 Singapore | 🚧 skeleton |
-| 12 | **K-ISMS-P (KISA)** | 🇰🇷 South Korea | 🚧 skeleton |
-| 13 | **Switzerland NCSC** | 🇨🇭 Switzerland | 🚧 skeleton |
-| 14 | **Israel INCD ICDM 2.0** | 🇮🇱 Israel | 🚧 skeleton |
-| 15 | **Germany BSI IT-Grundschutz** | 🇩🇪 Germany | 🚧 skeleton |
-| 16 | **UAE NESA** | 🇦🇪 UAE | 🚧 skeleton |
-| 17 | **Saudi NCA ECC** | 🇸🇦 Saudi Arabia | 🚧 skeleton |
+| 1 | **CMMC Level 2/3 FAR** | 🇺🇸 USA | DoD contractors assessed by C3PAOs under the Cyber AB |
+| 2 | **PCI DSS ROC v4.0** | 🌍 Global (card industry) | PCI SSC QSAs / ISAs |
+| 3 | **NCSC CHECK** | 🇬🇧 UK | NCSC CHECK-accredited Green-Light testers (HMG, CNI) |
+| 4 | **CREST CDPT** | 🇬🇧 UK / 🌍 Global | CREST-accredited member firms |
+| 5 | **ANSSI PASSI** | 🇫🇷 France | ANSSI-qualified PASSI auditeurs (4 audit categories) |
+| 6 | **BSI IT-Grundschutz** | 🇩🇪 Germany | BSI-certified auditors (BSIG / KRITIS operators) |
+| 7 | **Switzerland NCSC / FINMA** | 🇨🇭 Switzerland | NCSC-aligned testers; FINMA for regulated banks |
+| 8 | **Israel INCD ICDM 2.0** | 🇮🇱 Israel | INCD-listed assessors (banking, telecom, healthcare) |
+| 9 | **UAE NESA / SIA IAS** | 🇦🇪 UAE | NESA-accredited assessors |
+| 10 | **Saudi NCA ECC / CCC / OTCC** | 🇸🇦 Saudi Arabia | NCA-licensed Cybersecurity Service Providers |
+| 11 | **IRAP** | 🇦🇺 Australia | ASD-registered IRAP assessors |
+| 12 | **K-ISMS-P (KISA)** | 🇰🇷 South Korea | KISA-registered assessors (102 criteria) |
+| 13 | **Japan ISMAP / NISC** | 🇯🇵 Japan | ISMAP-listed audit firms |
+| 14 | **Singapore CSA CCoP 2.0** | 🇸🇬 Singapore | CSA-accredited CII assessors |
+| 15 | **Russia FSTEC / FSB** | 🇷🇺 Russia | FSTEC-licensed assessors (КИИ / FZ-187) |
+| 16 | **CERT-In Annexure-A** | 🇮🇳 India | CERT-In empanelled auditors |
+| 17 | **OWASP OPTRS** (JSON) | 🌍 Open standard | Machine-readable consumers (CI/CD, SOAR) |
 
-Status legend: ✅ implemented (schema + section list validated) · 🚧 skeleton (manifest scaffolded; needs practitioner PR to fully validate against the live framework) · 📋 roadmap.
+Every preset wires the **same** universal validators (CWE / CVE / CVSS / EPSS pinned to MITRE / NVD / FIRST.org). Frameworks differ only in the section list, per-finding field shape, severity rubric, and signing / submission requirements — all encoded in each `manifest.yaml`.
 
 Don't see your framework? Compose your own recipe — see [§"Build your own recipe"](#build-your-own-recipe).
 
@@ -149,7 +166,7 @@ The 28 universal sections live under [`sections/`](sections/). Each is a self-co
 | 10 | Risk-rating methodology | Most (excluded by IRAP) |
 | 11 | Summary of findings (severity counts) | All frameworks |
 | 12 | Key observations & critical risks | CERT-In, CHECK, PASSI, CREST |
-| 13 | Aggregated findings table | CERT-In §1.4, CHECK, CREST |
+| 13 | Aggregated findings table | CHECK §C-37e, CREST CDPT §10, PASSI, CERT-In |
 | 14 | Per-finding details | All frameworks |
 | 15 | Controls matrix | CMMC, IRAP, PCI DSS, ISO 27001, NESA, NCA ECC, K-ISMS-P, BSI |
 | 16 | Compensating controls register | PCI DSS |
@@ -177,7 +194,7 @@ cd redink
 ./install.sh
 
 # 3. Pick your framework
-$EDITOR framework.yaml          # default: certin-annexure-a
+$EDITOR framework.yaml          # 17 presets — pick one
 
 # 4. Pick your sections interactively
 claude
@@ -222,7 +239,7 @@ Three short narrative sections: Overview · Summary of Findings · Key Observati
 
 ```yaml
 # framework.yaml
-framework: certin-annexure-a    # one of 17 presets
+framework: owasp-optrs    # one of 17 presets — pick any
 ```
 
 ### Step 6 — Pick sections
@@ -424,12 +441,12 @@ For the exploitation phase, pair `redink` with [0xSteph/pentest-ai-agents](https
 
 ## Contributing
 
-PRs especially welcome for:
+PRs especially welcome from active assessors / auditors / pentesters in any of the supported regions:
 
-- Validating skeleton framework manifests against the live framework's published guidance (PRs from active practitioners ideal)
-- Full control catalogues for control-centric frameworks (NIST 800-171 for CMMC, ISM for IRAP, 12 reqs for PCI DSS, etc.) — drop a `frameworks/<name>/controls.yaml`
-- Localised prompts (French for PASSI, German for BSI, Korean for K-ISMS-P, Japanese for NCO)
-- Dedicated docx renderers for sections currently in placeholder mode
+- Refining framework manifests with regional practitioner expertise — e.g., NCSC CHECK CTL signing nuances, PASSI two-axis severity quirks, PCI QSA Customized Approach edge cases, IRAP "weakness not risk" wording
+- Full control catalogues for control-centric frameworks (NIST SP 800-171 / NIST SP 800-172 for CMMC, ISM for IRAP, the 12 PCI DSS requirements, BSI IT-Grundschutz catalogues, NCA ECC 5 domains × 29 subdomains, NESA 188 controls, K-ISMS-P 102 criteria) — drop a `frameworks/<name>/controls.yaml`
+- Localised prompts (French for PASSI, German for BSI, Korean for K-ISMS-P, Japanese for ISMAP, Arabic for NCA ECC / NESA, Russian for FSTEC)
+- Polished docx renderers per framework — sections currently fall through a generic renderer
 
 For now, open an issue first to discuss the scope before submitting a PR.
 

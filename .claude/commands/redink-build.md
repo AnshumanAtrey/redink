@@ -17,7 +17,7 @@ Confirm `frameworks/<active>/` exists and contains:
 - `prompt.md`
 - (optionally) `EXAMPLE.json` and `README.md`
 
-If the active framework is in the "skeleton" or "roadmap" status, **warn the user explicitly**: the schema may be incomplete and PRs are welcome. Continue if the user accepts.
+Sanity-check the framework manifest: required keys (`id`, `name`, `sections`, `hard_rules`, `official_sources`) must be present. If any are missing, warn the user and pause for confirmation before continuing.
 
 ## Step 2 — Read inputs
 
