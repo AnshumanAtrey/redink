@@ -1,0 +1,31 @@
+id: k-isms-p
+name: Korea K-ISMS-P Certification Audit Report
+region: South Korea
+audience: KISA-certified entities (info-comm service providers, e-commerce, etc.)
+status: skeleton
+output_format: docx
+sections:
+  - 01-cover-page
+  - 02-document-control
+  - 03-executive-summary
+  - 04-scope-statement
+  - 06-testing-methodology
+  - 11-summary-of-findings
+  - 14-per-finding-details
+  - 15-controls-matrix
+  - 19-compliance-statement
+  - 20-remediation-roadmap
+  - 21-limitations
+  - 22-references
+  - 28-continuous-monitoring
+report_title: "K-ISMS-P Certification Audit Report"
+official_sources:
+  - https://www.pipc.go.kr/eng/user/lgp/bnp/certification.do
+  - https://www.security.land/south-korea-isms-p-certification-overhaul-2026/
+finding_id_format: "ISMSP-001"
+hard_rules:
+  - "102 controls: 80 information security + 22 personal information protection"
+  - "Audit conducted by KISA or MSIT-appointed assessment body"
+  - "Certification valid for 3 years; annual surveillance audit required"
+  - "From Q3 2026: mandatory live penetration testing as part of certification process"
+  - "From Q3 2026: continuous monitoring / real-time security posture assessment (transition from annual snapshot)"

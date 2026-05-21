@@ -1,0 +1,31 @@
+id: irap
+name: IRAP Security Assessment Report + Controls Matrix
+region: Australia
+audience: ASD-registered IRAP assessors
+status: skeleton
+output_format: docx
+sections:
+  - 01-cover-page
+  - 02-document-control
+  - 03-executive-summary
+  - 04-scope-statement
+  - 06-testing-methodology
+  - 11-summary-of-findings
+  - 14-per-finding-details
+  - 15-controls-matrix
+  - 21-limitations
+  - 22-references
+  - 23-appendices
+  - 26-signoff
+report_title: "IRAP Security Assessment Report"
+official_sources:
+  - https://www.cyber.gov.au/business-government/protecting-devices-systems/assessment-evaluation-programs/irap
+  - https://www.cyber.gov.au/sites/default/files/2025-04/IRAP%20common%20assessment%20framework.pdf
+  - https://www.cyber.gov.au/sites/default/files/2024-08/IRAP%20consumer%20guide.pdf
+finding_id_format: "IRAP-001"
+hard_rules:
+  - "Assessors do NOT provide risk ratings — they identify weaknesses; consumer assesses risk"
+  - "Two minimum deliverables: Security Assessment Report (SAR) + Controls Matrix"
+  - "Outputs follow ASD guidance on cyber.gov.au; no marketing/promotional language"
+explicitly_excluded_sections:
+  - 10-risk-rating-methodology  # IRAP forbids risk ratings by assessor

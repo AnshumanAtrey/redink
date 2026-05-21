@@ -1,0 +1,20 @@
+id: owasp-optrs
+name: OWASP Penetration Test Reporting Standard
+region: Global / industry standard
+audience: Any pentest team — machine-readable JSON for downstream tools
+status: implemented
+output_format: json
+sections:
+  - 01-cover-page
+  - 03-executive-summary
+  - 04-scope-statement
+  - 11-summary-of-findings
+  - 14-per-finding-details
+report_title: "OPTRS Report (machine-readable)"
+official_sources:
+  - https://owasp.org/www-project-penetration-test-reporting-standard/
+  - https://github.com/OWASP/www-project-penetration-test-reporting-standard
+finding_id_format: "FINDING-001"
+hard_rules:
+  - "Output is JSON only; no docx is produced for this framework"
+  - "Each finding ships with audit_trail object containing exact-quote excerpts from MITRE / NVD / FIRST.org"

@@ -1,0 +1,32 @@
+id: japan-nco
+name: Japan NCO / NISC Government Cybersecurity Audit Report
+region: Japan
+audience: Japanese government agencies + essential infrastructure providers
+status: skeleton
+output_format: docx
+sections:
+  - 01-cover-page
+  - 02-document-control
+  - 03-executive-summary
+  - 04-scope-statement
+  - 06-testing-methodology
+  - 07-standards-adopted
+  - 09-tools-used
+  - 11-summary-of-findings
+  - 14-per-finding-details
+  - 18-threat-landscape
+  - 21-limitations
+  - 22-references
+  - 24-glossary
+  - 25-acronyms
+  - 27-incident-reporting
+report_title: "NCO / NISC Cybersecurity Audit Report"
+official_sources:
+  - https://www.cyber.go.jp/eng/
+  - https://www.nisc.go.jp/eng/
+  - https://www.ipa.go.jp/en/security/jisec/index.html
+finding_id_format: "JP-001"
+hard_rules:
+  - "Common Standards on Cybersecurity Measures of Governmental Entities define baseline"
+  - "Active Cyber Defense Act (ACDA) — incident-reporting required for specified essential infrastructure providers (effective ~Nov 2026)"
+  - "NCO (former NISC) is the overall coordinator since July 2025 reorganization"

@@ -1,0 +1,26 @@
+id: russia-fstec
+name: Russia FSTEC / FSB Compliance Audit Report
+region: Russia
+audience: Russian regulated entities + their auditors
+status: skeleton
+output_format: docx
+sections:
+  - 01-cover-page
+  - 03-executive-summary
+  - 04-scope-statement
+  - 06-testing-methodology
+  - 11-summary-of-findings
+  - 14-per-finding-details
+  - 15-controls-matrix
+  - 19-compliance-statement
+  - 21-limitations
+  - 22-references
+report_title: "FSTEC Compliance Audit Report"
+official_sources:
+  - https://fstec.ru/en
+finding_id_format: "FSTEC-001"
+hard_rules:
+  - "FSTEC: non-cryptographic technical means of data protection"
+  - "FSB certifications: cryptographic protection software subsystems"
+  - "Biennial audit cycle; certificate of compliance is unlimited-term subject to biennial review"
+  - "FSB certification requirements are NOT public; FSTEC details require formal access"

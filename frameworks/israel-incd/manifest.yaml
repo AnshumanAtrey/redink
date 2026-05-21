@@ -1,0 +1,33 @@
+id: israel-incd
+name: Israel INCD ICDM 2.0 Assessment Report
+region: Israel
+audience: Israeli regulated entities + INCD-recognized assessors
+status: skeleton
+output_format: docx
+sections:
+  - 01-cover-page
+  - 02-document-control
+  - 03-executive-summary
+  - 04-scope-statement
+  - 06-testing-methodology
+  - 10-risk-rating-methodology
+  - 11-summary-of-findings
+  - 14-per-finding-details
+  - 15-controls-matrix
+  - 18-threat-landscape
+  - 19-compliance-statement
+  - 20-remediation-roadmap
+  - 21-limitations
+  - 22-references
+  - 23-appendices
+  - 26-signoff
+  - 28-continuous-monitoring
+report_title: "Israeli Cyber Defense Methodology (ICDM 2.0) Assessment Report"
+official_sources:
+  - https://www.nist.gov/cyberframework/success-stories/israel-national-cyber-directorate-version-20
+  - https://shavitglobal.com/grc/ncsf-national-cyber-security-framework-in-israel/
+finding_id_format: "INCD-001"
+hard_rules:
+  - "ICDM 2.0 adopts NIST CSF 1.1 + NIST SP 800-53 Rev. 5 + Threat-Informed Defense + Zero-Trust"
+  - "Continuous risk management practices required (not just point-in-time audit)"
+  - "Sector-specific rules layered on top of the universal ICDM 2.0 baseline"

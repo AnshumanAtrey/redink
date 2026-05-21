@@ -1,0 +1,31 @@
+id: uae-nesa
+name: UAE NESA Information Assurance Audit Report
+region: United Arab Emirates
+audience: UAE entities subject to NESA / TDRA Information Assurance Standards
+status: skeleton
+output_format: docx
+sections:
+  - 01-cover-page
+  - 02-document-control
+  - 03-executive-summary
+  - 04-scope-statement
+  - 06-testing-methodology
+  - 10-risk-rating-methodology
+  - 11-summary-of-findings
+  - 14-per-finding-details
+  - 15-controls-matrix
+  - 19-compliance-statement
+  - 20-remediation-roadmap
+  - 21-limitations
+  - 22-references
+  - 23-appendices
+  - 26-signoff
+report_title: "NESA Information Assurance Audit Report"
+official_sources:
+  - https://www.iconnectitbs.com/nesa-compliance-uae/
+finding_id_format: "NESA-001"
+hard_rules:
+  - "188 security controls — Management Controls + Technical Controls"
+  - "Management Controls: governance, policy, leadership accountability, compliance monitoring, awareness"
+  - "Technical Controls: encryption, secure design, segmentation, malware defenses, IDS"
+  - "Aligned with ISO/IEC 27001 for ISMS"

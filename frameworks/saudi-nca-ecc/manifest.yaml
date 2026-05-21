@@ -1,0 +1,35 @@
+id: saudi-nca-ecc
+name: Saudi Arabia NCA Essential Cybersecurity Controls (ECC) Audit Report
+region: Saudi Arabia
+audience: Saudi entities subject to NCA Essential Cybersecurity Controls
+status: skeleton
+output_format: docx
+sections:
+  - 01-cover-page
+  - 02-document-control
+  - 03-executive-summary
+  - 04-scope-statement
+  - 05-out-of-scope
+  - 06-testing-methodology
+  - 10-risk-rating-methodology
+  - 11-summary-of-findings
+  - 14-per-finding-details
+  - 15-controls-matrix
+  - 18-threat-landscape
+  - 19-compliance-statement
+  - 20-remediation-roadmap
+  - 21-limitations
+  - 22-references
+  - 23-appendices
+  - 26-signoff
+report_title: "NCA ECC Compliance Audit Report"
+official_sources:
+  - https://nca.gov.sa/en/
+  - https://nca.gov.sa/ecc-en.pdf
+  - https://cdn.nca.gov.sa/api/public/cms/files/fd4cfde4-6ffe-45d5-ac29-820e4d2e4ef0_Guide-to-Essential-Cybersecurity-Controls-(ECC)-Implementation.pdf
+finding_id_format: "ECC-001"
+hard_rules:
+  - "5 core domains: Cybersecurity Governance · Cybersecurity Defense · Cybersecurity Operations · Third Party & Cloud Computing Cybersecurity · Cybersecurity Compliance & Audit"
+  - "Findings tagged with framework reference (single finding can be NCA ECC gap + ISO 27001 nonconformity + SAMA CSF gap + PDPL exposure)"
+  - "Consistent rating scale across audit charter (e.g. critical/major/moderate/minor)"
+control_status_enum: [Yes, Partial, No, Not Applicable]
