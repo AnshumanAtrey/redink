@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AnshumanAtrey/redink/sections/14-per-finding-details/schema.json",
+  "title": "Universal Per-Finding Schema",
+  "description": "Universal schema used as the base by every framework. Frameworks may overlay additional fields via frameworks/<name>/schema-overlay.json.",
+  "type": "object",
+  "required": [
+    "s_no",
+    "name_of_vulnerability",
+    "severity",
+    "vulnerable_location",
+    "vulnerable_path_port_url",
+    "vulnerable_parameter",
+    "cve_cwe",
+    "cvss_epss_score",
+    "description",
+    "poc_intro",
+    "poc_steps",
+    "recommendations",
+    "references",
+    "additional_observations",
+    "cwe_cve_audit",
+    "cvss_audit"
+  ],
+  "properties": {
+    "s_no": {
+      "type": "string",
+      "description": "Serial number. Format varies by framework: '001' (CERT-In), 'FINDING-001' (OWASP OPTRS), 'F-001' (CMMC), 'CHK-001' (CHECK), 'PCI-001' (PCI DSS)."
+    },
+    "name_of_vulnerability": {
+      "type": "string",
+      "description": "Verbatim from the poc/<scope>/<folder>/ folder name. Typos, spaces, mixed case preserved.",
+      "minLength": 1
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["Critical", "High", "Medium", "Low", "Informational", "N/A"]
+    },
+    "vulnerable_location": {
+      "type": "string",
+      "description": "Host + service descriptor. e.g. '<host> @ <ip> — Apache Tomcat web UI'."
+    },
+    "vulnerable_path_port_url": {
+      "type": "string",
+      "description": "Exact URL/port/path. e.g. 'http://<ip>:8080/' or 'tcp/22 (SSH)'."
+    },
+    "vulnerable_parameter": {
+      "type": ["string", "null"]
+    },
+    "cve_cwe": {
+      "type": "string",
+      "description": "Comma-separated CWE-N and/or CVE-YYYY-NNNNN."
+    },
+    "cvss_epss_score": {
+      "type": "string",
+      "description": "CVSS v3.1 vector + base + severity, optionally EPSS + lookup date."
+    },
+    "description": {"type": "string", "maxLength": 600},
+    "poc_intro": {"type": ["string", "null"]},
+    "poc_steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["step_number", "caption", "image_path"],
+        "properties": {
+          "step_number": {"type": "integer", "minimum": 1},
+          "caption": {"type": "string", "maxLength": 200},
+          "image_path": {"type": "string"}
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 4,
+      "items": {"type": "string", "maxLength": 200}
+    },
+    "references": {"type": "string"},
+    "additional_observations": {"type": ["string", "null"]},
+    "cwe_cve_audit": {"type": "string"},
+    "cvss_audit": {"type": "string"}
+  }
+}
