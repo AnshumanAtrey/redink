@@ -1,6 +1,8 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
 
+<img src="assets/red-ink.png" alt="redink — wax-sealed pentest report" width="900" />
+
 # redink
 
 **Compose pentest reports from 28 modular sections for 17+ compliance frameworks.**
