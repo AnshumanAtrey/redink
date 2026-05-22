@@ -4,7 +4,7 @@
 
 The `/redink-build` command will refuse to run if any required field is still a placeholder.
 
-These fields are framework-agnostic — the same `brand-guidelines.md` works whether the active framework is CERT-In Annexure-A, CMMC, NCSC CHECK, IRAP, PASSI, PCI DSS ROC, or OWASP OPTRS. The assembler picks the relevant fields per framework.
+These fields are framework-agnostic — the same `brand-guidelines.md` works whether the active framework is CERT-In, CMMC, NCSC CHECK, IRAP, PASSI, PCI DSS ROC, or OWASP OPTRS. The assembler picks the relevant fields per framework.
 
 ---
 

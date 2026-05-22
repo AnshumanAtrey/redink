@@ -1,7 +1,7 @@
 {
   "name": "redink",
   "version": "0.1.0",
-  "description": "Compose pentest reports from 28 modular sections for 17+ compliance frameworks. Open-source Claude Code pipeline supporting CERT-In Annexure-A, CMMC, NCSC CHECK, IRAP, PASSI, PCI DSS, CREST CDPT, OWASP OPTRS, K-ISMS-P, BSI IT-Grundschutz, and more.",
+  "description": "Compose pentest reports from 28 modular sections for 17+ compliance frameworks. Open-source Claude Code pipeline supporting CMMC, NCSC CHECK, IRAP, PASSI, PCI DSS, CREST CDPT, OWASP OPTRS, K-ISMS-P, BSI IT-Grundschutz, CERT-In, and more.",
   "author": {
     "name": "Anshuman Atrey",
     "url": "https://github.com/AnshumanAtrey"

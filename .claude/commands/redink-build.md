@@ -66,7 +66,7 @@ Wait for answers before proceeding.
 
 The ID format depends on the active framework's schema:
 
-- CERT-In Annexure-A → `s_no` as `001`, `002`, ...
+- CERT-In → `s_no` as `001`, `002`, ...
 - OWASP OPTRS → `id` as `FINDING-001`, `FINDING-002`, ...
 - CMMC → `finding_id` as `F-001`, `F-002`, ...
 - NCSC CHECK → `finding_ref` as `CHK-001`, ...
@@ -124,14 +124,14 @@ Print a one-screen summary:
 ```
 redink report built.
 
-  Framework: certin-annexure-a
+  Framework: certin
   Findings written: 23
     Critical: 4
     High: 9
     Medium: 8
     Low: 2
   Validation: CWE 23/23 · CVE 18/18 · CVSS 23/23 · EPSS 18/18
-  Output: output/certin-annexure-a-report.docx
+  Output: output/certin-report.docx
   QA report: output/qa-report.md (clean)
 
 Next:

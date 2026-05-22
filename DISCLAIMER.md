@@ -6,7 +6,7 @@
 
 A Claude Code plugin that helps penetration testers structure their findings into the report format their compliance framework expects. It validates CWE/CVE/CVSS/EPSS citations against canonical sources (MITRE, NVD, FIRST.org) and assembles findings into the framework's report wrapper.
 
-Currently supports: CERT-In Annexure-A · OWASP OPTRS · CMMC Level 2/3 · NCSC CHECK · PCI DSS ROC. IRAP and ANSSI PASSI are on the roadmap.
+Currently supports: CERT-In · OWASP OPTRS · CMMC Level 2/3 · NCSC CHECK · PCI DSS ROC. IRAP and ANSSI PASSI are on the roadmap.
 
 ## What this is not
 

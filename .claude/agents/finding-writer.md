@@ -91,7 +91,7 @@ Use the Write tool. Indent JSON 2 spaces.
 One-line summary:
 
 ```
-✓ Wrote jsons/001_Tomcat_HTTP_PUT_Method_RCE.json — High (8.1) — CWE-434 + CVE-2017-12617 — EPSS 94.50% — framework: certin-annexure-a
+✓ Wrote jsons/001_Tomcat_HTTP_PUT_Method_RCE.json — High (8.1) — CWE-434 + CVE-2017-12617 — EPSS 94.50% — framework: certin
 ```
 
 Or on failure:

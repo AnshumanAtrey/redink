@@ -1,7 +1,7 @@
 ---
 id: 07-standards-adopted
 title: Standards & Frameworks Adopted
-required_by: [certin-annexure-a, ncsc-check, pci-dss-roc, crest-cdpt, passi, germany-bsi-grundschutz, japan-nco, israel-incd]
+required_by: [certin, ncsc-check, pci-dss-roc, crest-cdpt, passi, germany-bsi-grundschutz, japan-nco, israel-incd]
 inputs:
   - from: brand-guidelines.md
     field: Standards adopted
@@ -10,7 +10,7 @@ output_type: table
 
 # Standards & Frameworks Adopted
 
-Lists the testing standards and severity-scoring systems the engagement followed. Maps to CERT-In Annexure-A Part 1 §1.3.
+Lists the testing standards and severity-scoring systems the engagement followed. Maps to CERT-In audit reports.
 
 ## Template
 

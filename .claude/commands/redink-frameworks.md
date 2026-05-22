@@ -30,7 +30,7 @@ Available frameworks:
   ✅ japan-nco               — Japan · ISMAP-registered audit institutions (NCO / NISC)
   ✅ singapore-ccop          — Singapore · CSA-approved CII auditors
   ✅ russia-fstec            — Russia · FSTEC-licensed attestation organisations
-  ✅ certin-annexure-a       — India · CERT-In empanelled auditors
+  ✅ certin       — India · CERT-In empanelled auditors
   ✅ owasp-optrs             — Global open standard · JSON for CI/CD + SOAR
 
 Legend:

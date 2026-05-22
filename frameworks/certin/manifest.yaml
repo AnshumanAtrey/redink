@@ -1,0 +1,54 @@
+id: certin
+name: CERT-In Cyber Security Audit & Vulnerability Disclosure Report
+region: India — Indian Computer Emergency Response Team (CERT-In)
+audience: |
+  CERT-In empanelled auditors producing reports under the public Comprehensive
+  Cyber Security Audit Policy Guidelines, plus researchers and organizations
+  submitting vulnerability disclosures under CERT-In's public Responsible
+  Vulnerability Disclosure and Coordination Policy.
+status: production-ready
+output_format: docx + signed PDF
+sections:
+  - 01-cover-page
+  - 03-executive-summary
+  - 04-scope-statement
+  - 06-testing-methodology
+  - 07-standards-adopted
+  - 08-team-roster
+  - 09-tools-used
+  - 11-summary-of-findings
+  - 12-key-observations
+  - 13-aggregated-findings-table
+  - 14-per-finding-details
+  - 21-limitations
+  - 22-references
+report_title: "Cyber Security Audit / Vulnerability Assessment Report (CERT-In)"
+official_sources:
+  - https://www.cert-in.org.in/PDF/certinvulnform.pdf
+  - https://www.cert-in.org.in/PDF/Comprehensive_Cyber_Security_Audit_Policy_Guidelines.pdf
+  - https://www.cert-in.org.in/PDF/Empanel_org.pdf
+finding_id_format: "001"
+hard_rules:
+  - "Every vulnerability entry must include: product affected, exact software version, vendor details, description with concise reproducible steps, supporting evidence (PoC and/or code sample and/or crash report and/or screenshots/video), and impact of exploitation — per CERT-In RVDP §3"
+  - "Vulnerability must be reproducible on the latest available or 'supported' version of the product — per RVDP §3"
+  - "Vulnerability must not be previously known — per RVDP §3"
+  - "All required fields must be populated; mark inapplicable fields as 'N/A' rather than leaving blank"
+  - "Separate report per testbed / machine / application"
+severity_classification: |
+  CVSS v3.1 / v4 base score per FIRST.org spec, expressed as Critical / High /
+  Medium / Low / Informational. EPSS percentage included where a CVE is present.
+control_status_enum: [Critical, High, Medium, Low, Informational]
+control_catalogue_reference: |
+  CERT-In Comprehensive Cyber Security Audit Policy Guidelines (public) defines
+  the auditor baseline. CERT-In Responsible Vulnerability Disclosure and
+  Coordination Policy (public) defines per-finding evidence requirements.
+unique_aspects: |
+  India's national CERT operates a dual public mandate: empanellment of IT
+  security audit organizations (administered via the public Empanellment of IT
+  Security Auditing Organizations document) and coordinated vulnerability
+  disclosure (administered via the public Responsible Vulnerability Disclosure
+  and Coordination Policy).
+submission_requirements:
+  - "Vulnerability disclosures: emailed to vdisclose@cert-in.org.in (PGP key 0x3B4E082C accepted); CERT-In acknowledges within 72 working hours"
+  - "Audit reports: delivered to the engaging organization per the contract; CERT-In is the policy authority, not the direct recipient for client audits"
+  - "Annual audit cadence per CERT-In Comprehensive Cyber Security Audit Policy Guidelines"

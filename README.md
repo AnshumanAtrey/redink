@@ -91,7 +91,7 @@ Manual reports have measurable error categories — every senior auditor has see
 | **CVE version-range errors** | Claims target version 1.0.2u is affected by a CVE patched in 1.0.2t → coordinator rejects | `cve-validator` fetches NVD's exact affected-range; stores the exact-quote excerpt for re-verification |
 | **CVSS arithmetic mistakes** | Vector says `AC:H` but the math was done as `AC:L` | `cvss-calculator` shows ISC / Impact / Exploitability / Base math for every finding |
 | **Stale EPSS** | Looked up two weeks ago; current probability is materially different | `epss-lookup` fetches live per finding, records lookup date; QA pass demands re-fetch if > 7 days old |
-| **Blank fields** | Cells left empty under deadline pressure → automatic rejection by frameworks that enforce a "no-blanks" rule (CMMC C3PAO scorecards, PCI DSS ROC, CHECK reports, CERT-In Annexure-A) | Assembler refuses to render the docx if mandatory fields are empty; `/redink-build` won't start with `<...>` placeholders in input files |
+| **Blank fields** | Cells left empty under deadline pressure → automatic rejection by frameworks that enforce a "no-blanks" rule (CMMC C3PAO scorecards, PCI DSS ROC, CHECK reports, CERT-In) | Assembler refuses to render the docx if mandatory fields are empty; `/redink-build` won't start with `<...>` placeholders in input files |
 | **Inconsistent severity** | Same vulnerability rated High by one team member, Medium by another | Single deterministic CVSS-derived severity rubric applied across all findings |
 | **Citation fabrication** (LLM-era) | Plausible-looking but invented CVE numbers or MITRE descriptions | Every entry's `cwe_cve_audit` field stores exact-quote excerpts from MITRE / NVD / FIRST.org; `report-reviewer` independently re-fetches and string-compares before submission |
 
@@ -146,7 +146,7 @@ Ordered roughly by the size of each market's empanelled / accredited tester pool
 | 13 | **Japan ISMAP / NISC** | 🇯🇵 Japan | ISMAP-listed audit firms |
 | 14 | **Singapore CSA CCoP 2.0** | 🇸🇬 Singapore | CSA-accredited CII assessors |
 | 15 | **Russia FSTEC / FSB** | 🇷🇺 Russia | FSTEC-licensed assessors (КИИ / FZ-187) |
-| 16 | **CERT-In Annexure-A** | 🇮🇳 India | CERT-In empanelled auditors |
+| 16 | **CERT-In** | 🇮🇳 India | CERT-In empanelled auditors |
 | 17 | **OWASP OPTRS** (JSON) | 🌍 Open standard | Machine-readable consumers (CI/CD, SOAR) |
 
 Every preset wires the **same** universal validators (CWE / CVE / CVSS / EPSS pinned to MITRE / NVD / FIRST.org). Frameworks differ only in the section list, per-finding field shape, severity rubric, and signing / submission requirements — all encoded in each `manifest.yaml`.
@@ -253,7 +253,7 @@ framework: owasp-optrs    # one of 17 presets — pick any
 /redink-recipe
 ```
 
-Walks you through every section: "Section 01 — Cover Page. Default for certin-annexure-a: ENABLED. Include? [Y/n]". After 28 questions, saves your selection to [`report-recipe.yaml`](report-recipe.yaml).
+Walks you through every section: "Section 01 — Cover Page. Default for certin: ENABLED. Include? [Y/n]". After 28 questions, saves your selection to [`report-recipe.yaml`](report-recipe.yaml).
 
 You can hand-edit `report-recipe.yaml` instead if you prefer.
 

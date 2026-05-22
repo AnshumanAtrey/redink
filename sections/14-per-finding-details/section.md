@@ -78,4 +78,4 @@ Source-audit footer (small gray text):
 
 - Universal schema lives in `sections/14-per-finding-details/schema.json` — every framework reads this as the base.
 - Frameworks with control-centric reporting (CMMC, PCI DSS, IRAP) wrap this with additional control-mapping fields per their own `frameworks/<name>/schema-overlay.json` (when present).
-- The "Vulnerable Point / Error Location" parent grouping in CERT-In's official Annexure-A docx template is rendered as a nested cell structure by the assembler.
+- The "Vulnerable Point / Error Location" parent grouping common to CERT-In Audit Guidelines reports is rendered as a nested cell structure by the assembler.

@@ -80,7 +80,7 @@ Write `output/qa-report.md`:
 
 ```markdown
 # QA Report — YYYY-MM-DD HH:MM
-**Framework:** certin-annexure-a
+**Framework:** certin
 **Entries reviewed:** 23
 **Issues found:** 2 hard, 1 advisory
 
@@ -119,7 +119,7 @@ To the parent:
 
 ```
 QA pass complete.
-  Framework: certin-annexure-a
+  Framework: certin
   Entries:   23
   Hard:      2  (EPSS_STALE on 014, CWE_DRIFT on 007)
   Advisory:  1  (TONE_LLM_TELL on 003)

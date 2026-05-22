@@ -1,7 +1,7 @@
 ---
 id: 09-tools-used
 title: Tools, Scripts & Frameworks Used
-required_by: [certin-annexure-a, ncsc-check, crest-cdpt, passi, japan-nco]
+required_by: [certin, ncsc-check, crest-cdpt, passi, japan-nco]
 inputs:
   - from: brand-guidelines.md
     field: Tools used
@@ -10,7 +10,7 @@ output_type: table
 
 # Tools, Scripts & Frameworks Used
 
-Tools and tooling categories used during the engagement. Maps to CERT-In Annexure-A Part 1 §1.5.
+Tools and tooling categories used during the engagement. Maps to CERT-In audit reports.
 
 ## Template
 

@@ -33,4 +33,4 @@ The `/redink-build` command will refuse to run if any required section below is 
 ## Notes
 
 - Keep these sections specific to *this engagement*, not generic boilerplate. Senior auditors notice copy-pasted text.
-- Frameworks that read these sections: CERT-In Annexure-A §1.1, NCSC CHECK exec-summary, PASSI résumé exploitable par des non-experts, CMMC FAR §1, and more.
+- Frameworks that read these sections: CERT-In audit reports, NCSC CHECK exec-summary, PASSI résumé exploitable par des non-experts, CMMC FAR §1, and more.

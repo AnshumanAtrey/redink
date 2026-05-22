@@ -35,12 +35,12 @@ Print:
 ```
 Re-built finding 014.
 
-  Framework: certin-annexure-a
+  Framework: certin
   Folder: poc/server/14_Outdated_OpenSSL/
   Severity: High → Critical (changed)
   CVE: CVE-2023-XXXX (unchanged)
   EPSS: 12.3% → 18.7% (re-fetched YYYY-MM-DD)
 
   Diff: jsons/014_Outdated_OpenSSL.json
-  Output: output/certin-annexure-a-report.docx (spliced)
+  Output: output/certin-report.docx (spliced)
 ```

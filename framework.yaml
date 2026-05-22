@@ -26,7 +26,7 @@ framework: owasp-optrs
 #   japan-nco               — Japan, ISMAP-registered audit institutions (NCO / NISC)
 #   singapore-ccop          — Singapore, CSA-approved CII auditors (Cybersecurity Act 2018)
 #   russia-fstec            — Russia, FSTEC-licensed attestation organisations
-#   certin-annexure-a       — India, CERT-In empanelled auditors
+#   certin       — India, CERT-In empanelled auditors
 #   owasp-optrs             — global open standard, machine-readable JSON for CI/CD + SOAR
 #
 # To list supported frameworks in Claude Code:  /redink-frameworks

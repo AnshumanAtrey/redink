@@ -11,10 +11,10 @@ Read-only inspection. No writes, no validators spawned.
 ```
 redink — status
 
-Active framework: certin-annexure-a  (frameworks/certin-annexure-a/ — implemented)
+Active framework: certin  (frameworks/certin/ — implemented)
 
 Inputs:
-  framework.yaml        ✓ certin-annexure-a
+  framework.yaml        ✓ certin
   brand-guidelines.md   ✓ filled         (or: ✗ contains <placeholders>)
   targets.yaml          ✓ valid
   poc/web/              12 folders
@@ -41,7 +41,7 @@ Severity distribution (written so far):
   Low:       2
 
 Output:
-  output/certin-annexure-a-report.docx  (last assembled: YYYY-MM-DD HH:MM)
+  output/certin-report.docx  (last assembled: YYYY-MM-DD HH:MM)
 
 Next:
   Run  /redink-build  to generate the 6 pending findings.

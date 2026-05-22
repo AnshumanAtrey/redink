@@ -49,6 +49,6 @@ The first page of the report. Combines firm branding, engagement identifiers, an
 
 ## Notes
 
-- The framework display name and report title vary by framework (e.g. "CERT-In Annexure-A VAPT Report", "CMMC L2 Final Assessment Report").
+- The framework display name and report title vary by framework (e.g. "CERT-In VAPT Report", "CMMC L2 Final Assessment Report").
 - If `assets/logo.png` is missing, the cover renders text-only.
 - Classification banner sits at top of page in red, bold; only renders if the user provided a value.

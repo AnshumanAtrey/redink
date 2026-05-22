@@ -8,7 +8,7 @@ Naming convention: one template per framework.
 
 ```
 templates/
-├── certin-annexure-a.docx
+├── certin.docx
 ├── cmmc-level-3.docx
 ├── ncsc-check.docx
 ├── pci-dss-roc.docx

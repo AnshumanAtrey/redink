@@ -1,7 +1,7 @@
 ---
 id: 12-key-observations
 title: Key Observations & Critical Risks
-required_by: [certin-annexure-a, ncsc-check, passi, crest-cdpt]
+required_by: [certin, ncsc-check, passi, crest-cdpt]
 inputs:
   - from: engagement-summary.md
     field: Key Observations & Critical Risks
